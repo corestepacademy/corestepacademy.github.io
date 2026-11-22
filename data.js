@@ -408,7 +408,7 @@ const STUDY_RESOURCES = [
       {
         type: "Notes",
         label: "Mind Map & Notes",
-        url: "./assets/class_10/social_science/mindmaps/geo-agriculture-mindmap/index.html",
+        url: "./assets/class_10/social_science/mindmaps/geo-ch4-agriculture-mindmap/index.html",
       },
       {
         type: "Quiz",
@@ -443,7 +443,7 @@ const STUDY_RESOURCES = [
       {
         type: "Notes",
         label: "माइंड मैप और नोट्स",
-        url: "./assets/class_10/social_science/mindmaps/geo-agriculture-mindmap-hindi/index.html",
+        url: "./assets/class_10/social_science/mindmaps/geo-ch4-agriculture-mindmap-hindi/index.html",
       },
       {
         type: "Quiz",

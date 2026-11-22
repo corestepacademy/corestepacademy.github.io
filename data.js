@@ -536,4 +536,47 @@ const STUDY_RESOURCES = [
       },
     ],
   },
+  {
+    id: "c8-sci-ch9-en",
+    classNum: 8,
+    medium: "English",
+    subject: "Science",
+    chapter: "Ch 9: The Amazing World of Solutes, Solvents, and Solutions",
+    description:
+      "Uniform vs non-uniform mixtures, solute and solvent identification (chashni, vinegar, air), concentration, solubility of solids and gases, saturated vs unsaturated solutions, density, relative density, mass vs weight, and effects of temperature and pressure.",
+    keywords: [
+      "science",
+      "solute",
+      "solvent",
+      "solution",
+      "uniform mixture",
+      "non-uniform mixture",
+      "solubility",
+      "saturated solution",
+      "unsaturated solution",
+      "concentration",
+      "dilute",
+      "concentrated",
+      "density",
+      "relative density",
+      "mass and weight",
+      "anomalous behaviour of water",
+      "curiosity",
+      "class 8",
+    ],
+    youtubeUrl: "", // Paste your YouTube video URL here
+    materials: [
+      {
+        type: "Notes",
+        label: "Mind Map & Notes",
+        url: "./assets/class_8/science/notes/ch9-solutions-and-density-notes.pdf",
+      },
+      {
+        type: "Quiz",
+        label: "Practice Quiz",
+        url: "./assets/class_8/science/quizzes/ch9-quiz.html",
+        format: "html",
+      },
+    ],
+  },
 ];

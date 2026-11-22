@@ -1,0 +1,1536 @@
+<!doctype html>
+<html lang="hi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      कक्षा 10 भूगोल अध्याय 4: कृषि – 4-क्विज़ हब | CoreStep Academy
+    </title>
+    <style>
+      :root {
+        --bg: #f4f6fb;
+        --surface: #ffffff;
+        --surface-alt: #f8fafc;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: #e2e8f0;
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --primary-soft: #eff6ff;
+        --correct: #16a34a;
+        --correct-bg: #dcfce7;
+        --wrong: #dc2626;
+        --wrong-bg: #fee2e2;
+        --radius: 16px;
+        --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      }
+
+      [data-theme="dark"] {
+        --bg: #0b1120;
+        --surface: #111827;
+        --surface-alt: #1e293b;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+        --border: #334155;
+        --primary: #3b82f6;
+        --primary-hover: #60a5fa;
+        --primary-soft: rgba(59, 130, 246, 0.16);
+        --correct: #22c55e;
+        --correct-bg: rgba(34, 197, 94, 0.16);
+        --wrong: #ef4444;
+        --wrong-bg: rgba(239, 68, 68, 0.16);
+        --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          "Noto Sans Devanagari",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+        min-height: 100vh;
+        padding: 20px 16px 56px;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      /* Top Bar */
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+
+      .brand-badge {
+        background: var(--primary);
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.3px;
+      }
+
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn-ghost {
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+        padding: 8px 14px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      /* Hub Hero */
+      .hero-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 26px 28px;
+        box-shadow: var(--shadow);
+        margin-bottom: 22px;
+      }
+
+      .hero-tag {
+        display: inline-block;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.82rem;
+        padding: 5px 12px;
+        border-radius: 999px;
+        margin-bottom: 12px;
+        letter-spacing: 0.2px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+        line-height: 1.3;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 0.96rem;
+        margin-bottom: 18px;
+      }
+
+      .overall-progress-wrap {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px 16px;
+      }
+
+      .overall-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .progress-track {
+        width: 100%;
+        height: 8px;
+        background: var(--border);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: var(--primary);
+        width: 0%;
+        transition: width 0.35s ease;
+      }
+
+      /* 4-Quiz Bento Grid */
+      .quiz-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .quiz-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+          transform 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .quiz-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary);
+      }
+
+      .quiz-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        gap: 8px;
+      }
+
+      .quiz-num {
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: var(--primary);
+        background: var(--primary-soft);
+        padding: 4px 10px;
+        border-radius: 8px;
+      }
+
+      .status-badge {
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--surface-alt);
+        color: var(--muted);
+        border: 1px solid var(--border);
+      }
+
+      .status-badge.done {
+        background: var(--correct-bg);
+        color: var(--correct);
+        border-color: var(--correct);
+      }
+
+      .quiz-card h2 {
+        font-size: 1.18rem;
+        margin-bottom: 6px;
+        line-height: 1.35;
+      }
+
+      .quiz-card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+
+      .quiz-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.84rem;
+        color: var(--muted);
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+        margin-bottom: 14px;
+      }
+
+      /* Primary & Secondary Buttons */
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 0.96rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-hover);
+      }
+
+      .btn-primary:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      .btn-full {
+        width: 100%;
+      }
+
+      .btn-whatsapp {
+        background: #16a34a;
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-size: 0.94rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn-whatsapp:hover {
+        background: #15803d;
+      }
+
+      /* Active Quiz Card */
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .active-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      .quiz-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        border-radius: 999px;
+        color: var(--text);
+      }
+
+      .topic-tag {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin: 18px 0 8px;
+        display: block;
+      }
+
+      .question-text {
+        font-size: 1.18rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        white-space: pre-line;
+      }
+
+      .options-list {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .option-btn {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        text-align: left;
+        padding: 14px 16px;
+        background: var(--surface-alt);
+        color: var(--text);
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        font-size: 0.97rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.18s ease;
+      }
+
+      .option-btn:hover:not(:disabled) {
+        border-color: var(--primary);
+        background: var(--primary-soft);
+      }
+
+      .option-btn:disabled {
+        cursor: default;
+      }
+
+      .option-key {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+
+      .option-btn.correct {
+        border-color: var(--correct);
+        background: var(--correct-bg);
+      }
+
+      .option-btn.correct .option-key {
+        background: var(--correct);
+        color: #fff;
+        border-color: var(--correct);
+      }
+
+      .option-btn.wrong {
+        border-color: var(--wrong);
+        background: var(--wrong-bg);
+      }
+
+      .option-btn.wrong .option-key {
+        background: var(--wrong);
+        color: #fff;
+        border-color: var(--wrong);
+      }
+
+      .explanation {
+        display: none;
+        background: var(--surface-alt);
+        border-left: 4px solid var(--primary);
+        padding: 14px 16px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 0.94rem;
+      }
+
+      .explanation.show {
+        display: block;
+      }
+
+      .explanation strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--primary);
+      }
+
+      .quiz-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* Result Screen */
+      .result-center {
+        text-align: center;
+        margin-bottom: 22px;
+      }
+
+      .score-circle {
+        width: 134px;
+        height: 134px;
+        border-radius: 50%;
+        background: var(--primary-soft);
+        border: 6px solid var(--primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 12px auto 18px;
+      }
+
+      .score-circle .big {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1.1;
+      }
+
+      .score-circle .small {
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .action-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+
+      .review-title {
+        font-size: 1.12rem;
+        margin-bottom: 14px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+
+      .review-item {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+        font-size: 0.92rem;
+      }
+
+      .review-item.is-correct {
+        border-left: 4px solid var(--correct);
+      }
+
+      .review-item.is-wrong {
+        border-left: 4px solid var(--wrong);
+      }
+
+      .review-q {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .text-correct {
+        color: var(--correct);
+        font-weight: 700;
+      }
+      .text-wrong {
+        color: var(--wrong);
+        font-weight: 700;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      @media (max-width: 700px) {
+        .quiz-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-card,
+        .card {
+          padding: 20px 16px;
+        }
+        h1 {
+          font-size: 1.38rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Top Navigation -->
+      <header class="topbar">
+        <a href="../../../../index.html" class="brand">
+          <span class="brand-badge">CoreStep</span>
+          <span>CoreStep Academy</span>
+        </a>
+        <div class="topbar-actions">
+          <a href="../../../../index.html" class="btn-ghost">← होम</a>
+          <button id="themeToggle" class="btn-ghost" type="button">
+            🌙 डार्क
+          </button>
+        </div>
+      </header>
+
+      <!-- 4-QUIZ HUB SCREEN -->
+      <main id="hubScreen">
+        <section class="hero-card">
+          <span class="hero-tag"
+            >कक्षा 10 • NCERT भूगोल • अध्याय 4 (हिंदी माध्यम)</span
+          >
+          <h1>कृषि – 4-भाग इंटरैक्टिव क्विज़ हब</h1>
+          <p class="subtitle">
+            NCERT अध्याय के सभी 4 प्रमुख भागों का क्रमबद्ध अभ्यास करें — कुल 40
+            बोर्ड-परीक्षा आधारित बहुविकल्पीय प्रश्न (MCQs), तुरंत व्याख्या और
+            ऑटोमैटिक प्रगति ट्रैकर के साथ।
+          </p>
+
+          <div class="overall-progress-wrap">
+            <div class="overall-row">
+              <span id="overallStatus">पूर्ण: 0 / 4 क्विज़</span>
+              <span id="overallScore">कुल सर्वश्रेष्ठ स्कोर: 0 / 40</span>
+            </div>
+            <div class="progress-track">
+              <div id="overallFill" class="progress-fill"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="quizGrid" class="quiz-grid"></section>
+      </main>
+
+      <!-- ACTIVE QUIZ SCREEN -->
+      <section id="quizScreen" class="card hidden">
+        <div class="active-header">
+          <button id="backToHubBtn" class="btn-ghost" type="button">
+            ← सभी 4 क्विज़
+          </button>
+          <strong id="activeQuizTitle" style="font-size: 0.98rem"
+            >क्विज़ शीर्षक</strong
+          >
+        </div>
+
+        <div class="quiz-meta">
+          <span id="qCounter" class="pill">प्रश्न 1 / 10</span>
+          <span id="scoreBadge" class="pill">स्कोर: 0</span>
+          <span id="timerBadge" class="pill">⏱ 00:00</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <span id="topicTag" class="topic-tag">विषय</span>
+        <div id="questionText" class="question-text"></div>
+        <div id="optionsList" class="options-list"></div>
+
+        <div id="explanationBox" class="explanation">
+          <strong>NCERT व्याख्या</strong>
+          <span id="explanationText"></span>
+        </div>
+
+        <div class="quiz-footer">
+          <span style="font-size: 0.85rem; color: var(--muted)"
+            >आगे बढ़ने के लिए एक विकल्प चुनें</span
+          >
+          <button id="nextBtn" class="btn-primary" type="button" disabled>
+            अगला प्रश्न →
+          </button>
+        </div>
+      </section>
+
+      <!-- RESULT SCREEN -->
+      <section id="resultScreen" class="card hidden">
+        <div class="result-center">
+          <span id="resultQuizBadge" class="hero-tag">क्विज़ पूर्ण</span>
+          <div class="score-circle">
+            <span id="finalScore" class="big">0/10</span>
+            <span id="finalPercent" class="small">0%</span>
+          </div>
+          <h2 id="resultHeading">शानदार प्रयास!</h2>
+          <p id="resultSummary" class="subtitle"></p>
+        </div>
+
+        <div class="action-row">
+          <button id="resultHubBtn" class="btn-ghost" type="button">
+            ← सभी 4 क्विज़
+          </button>
+          <button id="retakeBtn" class="btn-ghost" type="button">
+            ↻ फिर से दें
+          </button>
+          <button id="nextQuizBtn" class="btn-primary" type="button">
+            अगला क्विज़ →
+          </button>
+          <button id="shareBtn" class="btn-whatsapp" type="button">
+            WhatsApp पर शेयर करें
+          </button>
+        </div>
+
+        <h3 class="review-title">विस्तृत उत्तर समीक्षा</h3>
+        <div id="reviewContainer"></div>
+      </section>
+    </div>
+
+    <script>
+      const quizzes = [
+        {
+          id: "quiz1",
+          number: "क्विज़ 1 / 4",
+          title: "कृषि के प्रकार",
+          description:
+            "प्रारंभिक जीविका निर्वाह कृषि, कर्तन दहन प्रणाली के स्थानीय नाम (भारत व विश्व), गहन जीविका कृषि, वाणिज्यिक एवं रोपण कृषि।",
+          questions: [
+            {
+              topic: "परिचय",
+              question:
+                "भारत की लगभग कितनी जनसंख्या कृषि कार्यों में संलग्न है?",
+              options: ["एक-चौथाई", "एक-तिहाई", "आधी", "दो-तिहाई"],
+              answer: 3,
+              explanation:
+                "भारत कृषि की दृष्टि से एक महत्वपूर्ण देश है, जिसकी दो-तिहाई जनसंख्या कृषि कार्यों में संलग्न है।",
+            },
+            {
+              topic: "प्रारंभिक जीविका निर्वाह कृषि",
+              question:
+                "निम्नलिखित में से कौन-से औज़ार प्रारंभिक जीविका निर्वाह कृषि की विशेषता हैं?",
+              options: [
+                "ट्रैक्टर, कंबाइन हार्वेस्टर और नलकूप",
+                "लकड़ी के हल, डाओ और खुदाई करने वाली छड़ी",
+                "HYV सीड ड्रिल और रासायनिक स्प्रेयर",
+                "पावर टिलर और ड्रिप सिंचाई पाइप",
+              ],
+              answer: 1,
+              explanation:
+                "प्रारंभिक जीविका निर्वाह कृषि भूमि के छोटे टुकड़ों पर आदिम कृषि औज़ारों जैसे लकड़ी के हल, डाओ और खुदाई करने वाली छड़ी तथा परिवार अथवा समुदाय श्रम की मदद से की जाती है।",
+            },
+            {
+              topic: "कर्तन दहन प्रणाली – भारत",
+              question:
+                "उत्तर-पूर्वी राज्यों—असम, मेघालय, मिज़ोरम और नागालैंड—में 'कर्तन दहन प्रणाली' (Slash and Burn) कृषि को किस नाम से जाना जाता है?",
+              options: ["पोडू", "बेवर", "झूम (Jhumming)", "कुमारी"],
+              answer: 2,
+              explanation:
+                "उत्तर-पूर्वी राज्यों (असम, मेघालय, मिज़ोरम और नागालैंड) में कर्तन दहन कृषि को 'झूम' कहा जाता है।",
+            },
+            {
+              topic: "कर्तन दहन प्रणाली – भारत",
+              question:
+                "भारत में कर्तन दहन कृषि का स्थानीय नाम 'दीपा' (Dipa) किस क्षेत्र से संबंधित है?",
+              options: [
+                "छत्तीसगढ़ के बस्तर ज़िले और अंडमान निकोबार द्वीप समूह",
+                "पश्चिमी घाट",
+                "दक्षिण-पूर्वी राजस्थान",
+                "हिमालयन क्षेत्र",
+              ],
+              answer: 0,
+              explanation:
+                "'दीपा' छत्तीसगढ़ के बस्तर ज़िले और अंडमान निकोबार द्वीप समूह में प्रचलित कर्तन दहन कृषि का स्थानीय नाम है।",
+            },
+            {
+              topic: "कर्तन दहन प्रणाली – भारत",
+              question:
+                "मध्य प्रदेश में कर्तन दहन प्रणाली कृषि को स्थानीय रूप से किस नाम से जाना जाता है?",
+              options: ["कुमारी", "बेवर या दहिया", "कुरुवा", "खिल"],
+              answer: 1,
+              explanation:
+                "मध्य प्रदेश में इसे 'बेवर' या 'दहिया' कहा जाता है। (पोडू/पेंडा आंध्र प्रदेश में, कुरुवा झारखंड में और पामाडाबी/कोमान/बरींगा ओडिशा में कहा जाता है।)",
+            },
+            {
+              topic: "कर्तन दहन प्रणाली – विश्व",
+              question:
+                "निम्नलिखित में से कौन-सा युग्म विश्व में कर्तन दहन कृषि के स्थानीय नाम और देश/क्षेत्र का सही मिलान है?",
+              options: [
+                "मिल्पा – मेक्सिको और मध्य अमेरिका",
+                "लदांग – ब्राज़ील",
+                "रोका – इंडोनेशिया",
+                "कोनुको – वियतनाम",
+              ],
+              answer: 0,
+              explanation:
+                "मिल्पा (मेक्सिको व मध्य अमेरिका), कोनुको (वेनेज़ुएला), रोका (ब्राज़ील), मसोले (मध्य अफ्रीका), लदांग (इंडोनेशिया) और रे (वियतनाम) सही मिलान हैं।",
+            },
+            {
+              topic: "गहन जीविका कृषि",
+              question:
+                "गहन जीविका कृषि वाले क्षेत्रों में भू-जोत का आकार अलाभप्रद (छोटा) क्यों होता जा रहा है?",
+              options: [
+                "हर दो साल में खेती की जगह बदलने के कारण",
+                "भू-स्वामित्व में विरासत के अधिकार (Right of Inheritance) से पीढ़ी-दर-पीढ़ी भूमि के विभाजन के कारण",
+                "रोपण कृषि द्वारा सारी उपजाऊ भूमि घेरने के कारण",
+                "मानसूनी वर्षा के अभाव के कारण",
+              ],
+              answer: 1,
+              explanation:
+                "भू-स्वामित्व में विरासत के अधिकार के कारण पीढ़ी-दर-पीढ़ी जोतों का आकार छोटा और अलाभप्रद होता जा रहा है, जबकि किसान सीमित भूमि से अधिकतम पैदावार लेने की कोशिश करते हैं।",
+            },
+            {
+              topic: "वाणिज्यिक कृषि",
+              question:
+                "निम्नलिखित में से वाणिज्यिक कृषि का मुख्य लक्षण क्या है?",
+              options: [
+                "रासायनिक उर्वरकों का बिल्कुल प्रयोग न करना",
+                "केवल प्राकृतिक मृदा उर्वरता पर निर्भर रहना",
+                "अधिक पैदावार देने वाले बीजों (HYV), रासायनिक उर्वरकों और कीटनाशकों का अधिक उपयोग",
+                "छोटे टुकड़ों पर केवल पारिवारिक श्रम का उपयोग",
+              ],
+              answer: 2,
+              explanation:
+                "वाणिज्यिक कृषि का मुख्य लक्षण आधुनिक निवेशों जैसे अधिक पैदावार देने वाले बीजों (HYV), रासायनिक उर्वरकों, कीटनाशकों और खरपतवारनाशकों का अधिक उपयोग करके उच्च पैदावार प्राप्त करना है।",
+            },
+            {
+              topic: "क्षेत्रीय विविधता",
+              question:
+                "चावल हरियाणा और पंजाब में एक वाणिज्यिक फसल है, परंतु ओडिशा में यह मुख्य रूप से कैसी फसल है?",
+              options: ["रोपण फसल", "जीविका फसल", "रेशेदार फसल", "ज़ायद फसल"],
+              answer: 1,
+              explanation:
+                "कृषि के वाणिज्यीकरण का स्तर विभिन्न प्रदेशों में अलग-अलग है—उदाहरण के लिए, हरियाणा और पंजाब में चावल वाणिज्यिक फसल है, लेकिन ओडिशा में यह एक जीविका फसल है।",
+            },
+            {
+              topic: "रोपण कृषि",
+              question:
+                "रोपण कृषि (Plantation Agriculture) के बारे में निम्नलिखित में से कौन-सा कथन सत्य है?",
+              options: [
+                "इसमें छोटे खेतों में अनेक खाद्यान्न एक साथ उगाए जाते हैं",
+                "इसमें लंबे-चौड़े क्षेत्र में एकल फसल बोई जाती है और यह कृषि व उद्योग के बीच एक अंतरापृष्ठ (Interface) है",
+                "इसमें बहुत कम पूँजी और किसी परिवहन जाल की आवश्यकता नहीं होती",
+                "इसका पूरा उत्पादन किसान के परिवार द्वारा उपभोग कर लिया जाता है",
+              ],
+              answer: 1,
+              explanation:
+                "रोपण कृषि में लंबे-चौड़े क्षेत्र में एकल फसल (जैसे चाय, कॉफी, रबड़, गन्ना, केला) बोई जाती है। यह अत्यधिक पूँजी और प्रवासी श्रमिकों की सहायता से की जाती है तथा इसका सारा उत्पादन उद्योग में कच्चे माल के रूप में प्रयुक्त होता है।",
+            },
+          ],
+        },
+        {
+          id: "quiz2",
+          number: "क्विज़ 2 / 4",
+          title: "शस्य प्रारूप एवं फसल ऋतुएँ",
+          description:
+            "रबी, खरीफ और ज़ायद ऋतुएँ, बुआई व कटाई का समय, पश्चिमी शीतोष्ण चक्रवात तथा अस, अमन और बोरो धान की फसलें।",
+          questions: [
+            {
+              topic: "शस्य ऋतुएँ",
+              question:
+                "NCERT के अनुसार भारत में कितनी मुख्य शस्य ऋतुएँ (फसल ऋतुएँ) हैं?",
+              options: [
+                "दो (रबी और खरीफ)",
+                "तीन (रबी, खरीफ और ज़ायद)",
+                "चार (वसंत, ग्रीष्म, शरद, शीत)",
+                "केवल एक मानसून ऋतु",
+              ],
+              answer: 1,
+              explanation:
+                "भारत में तीन मुख्य शस्य ऋतुएँ हैं—रबी, खरीफ और ज़ायद।",
+            },
+            {
+              topic: "रबी ऋतु",
+              question: "भारत में रबी फसलों की बुआई और कटाई कब की जाती है?",
+              options: [
+                "बुआई जून–जुलाई में; कटाई सितंबर–अक्टूबर में",
+                "बुआई शीत ऋतु (अक्टूबर से दिसंबर) में; कटाई ग्रीष्म ऋतु (अप्रैल से जून) में",
+                "बुआई मार्च–अप्रैल में; कटाई जून में",
+                "बुआई अगस्त में; कटाई दिसंबर में",
+              ],
+              answer: 1,
+              explanation:
+                "रबी फसलों को शीत ऋतु में अक्टूबर से दिसंबर के मध्य बोया जाता है और ग्रीष्म ऋतु में अप्रैल से जून के मध्य काटा जाता है।",
+            },
+            {
+              topic: "रबी फसलें",
+              question:
+                "निम्नलिखित में से किस समूह में केवल रबी की फसलें शामिल हैं?",
+              options: [
+                "गेहूँ, जौ, मटर, चना और सरसों",
+                "धान, मक्का, ज्वार, बाजरा और कपास",
+                "तरबूज़, खरबूज़ा और खीरा",
+                "जूट, मूँगफली, सोयाबीन और उड़द",
+              ],
+              answer: 0,
+              explanation:
+                "गेहूँ, जौ, मटर, चना और सरसों भारत की प्रमुख रबी फसलें हैं।",
+            },
+            {
+              topic: "रबी फसलों के लिए वर्षा",
+              question:
+                "शीत ऋतु में किस मौसमी घटना के कारण होने वाली वर्षा उत्तर और उत्तर-पश्चिमी भारत में रबी फसलों के अधिक उत्पादन में सहायक होती है?",
+              options: [
+                "दक्षिण-पश्चिम मानसून",
+                "शीतोष्ण पश्चिमी विक्षोभ (पश्चिमी शीतोष्ण चक्रवात)",
+                "बंगाल की खाड़ी के उष्णकटिबंधीय चक्रवात",
+                "लू की हवाएँ",
+              ],
+              answer: 1,
+              explanation:
+                "शीत ऋतु में शीतोष्ण पश्चिमी विक्षोभों से होने वाली वर्षा तथा हरित क्रांति की सफलता रबी फसलों के उत्पादन में बहुत सहायक होती है।",
+            },
+            {
+              topic: "खरीफ ऋतु",
+              question: "खरीफ फसलों की बुआई और कटाई का समय क्या होता है?",
+              options: [
+                "अक्टूबर में बुआई; अप्रैल में कटाई",
+                "मानसून के आगमन (जून–जुलाई) के साथ बुआई; सितंबर–अक्टूबर में कटाई",
+                "मार्च में बुआई; मई में कटाई",
+                "जनवरी में बुआई; अगस्त में कटाई",
+              ],
+              answer: 1,
+              explanation:
+                "खरीफ फसलें देश के विभिन्न क्षेत्रों में मानसून के आगमन के साथ बोई जाती हैं और सितंबर–अक्टूबर में काट ली जाती हैं।",
+            },
+            {
+              topic: "खरीफ फसलें",
+              question: "निम्नलिखित में से कौन-सी फसल खरीफ की फसल नहीं है?",
+              options: ["चावल (धान)", "कपास", "मूँगफली", "सरसों"],
+              answer: 3,
+              explanation:
+                "सरसों एक रबी फसल है। चावल, मक्का, ज्वार, बाजरा, तुअर (अरहर), मूँग, उड़द, कपास, जूट, मूँगफली और सोयाबीन खरीफ की मुख्य फसलें हैं।",
+            },
+            {
+              topic: "धान की तीन फसलें",
+              question:
+                "असम, पश्चिम बंगाल और ओडिशा में एक वर्ष में धान की तीन फसलें उगाई जाती हैं। उनके नाम क्या हैं?",
+              options: [
+                "रबी, खरीफ और ज़ायद",
+                "अस, अमन और बोरो",
+                "झूम, दीपा और पामलू",
+                "अरेबिका, रोबस्टा और लिबेरिका",
+              ],
+              answer: 1,
+              explanation:
+                "असम, पश्चिम बंगाल और ओडिशा में धान की तीन फसलें—अस, अमन और बोरो—एक वर्ष में उगाई जाती हैं।",
+            },
+            {
+              topic: "ज़ायद ऋतु",
+              question:
+                "रबी और खरीफ फसल ऋतुओं के बीच ग्रीष्म ऋतु में बोई जाने वाली अल्पकालिक फसल ऋतु को क्या कहा जाता है?",
+              options: ["खरीफ", "ज़ायद", "बोरो", "मानसून"],
+              answer: 1,
+              explanation:
+                "रबी और खरीफ फसल ऋतुओं के बीच ग्रीष्म ऋतु में बोई जाने वाली फसल को 'ज़ायद' कहा जाता है।",
+            },
+            {
+              topic: "ज़ायद फसलें",
+              question:
+                "निम्नलिखित में से कौन-सी फसलें ज़ायद ऋतु में उगाई जाती हैं?",
+              options: [
+                "तरबूज़, खरबूज़ा, खीरे, सब्ज़ियाँ और चारे की फसलें",
+                "गेहूँ, चना और जौ",
+                "कपास, जूट और सोयाबीन",
+                "चाय, कॉफी और रबड़",
+              ],
+              answer: 0,
+              explanation:
+                "ज़ायद ऋतु में मुख्यतः तरबूज़, खरबूज़ा, खीरे, सब्ज़ियों और चारे की फसलों की खेती की जाती है।",
+            },
+            {
+              topic: "फसल की अवधि",
+              question:
+                "शस्य प्रारूप अनुभाग में वर्णित किस फसल को तैयार होने में लगभग एक वर्ष का समय लगता है?",
+              options: ["मक्का", "गेहूँ", "गन्ना", "खीरा"],
+              answer: 2,
+              explanation:
+                "NCERT में ज़ायद ऋतु के अंतर्गत विशेष रूप से उल्लेख किया गया है कि गन्ने की फसल को तैयार होने में लगभग एक वर्ष लगता है।",
+            },
+          ],
+        },
+        {
+          id: "quiz3",
+          number: "क्विज़ 3 / 4",
+          title: "भारत की मुख्य खाद्य व अखाद्य फसलें",
+          description:
+            "चावल, गेहूँ, मोटे अनाज (ज्वार, बाजरा, रागी), मक्का, दालें, गन्ना, तिलहन, चाय, कॉफी, रबड़, कपास व जूट की जलवायु, मिट्टी और प्रमुख राज्य।",
+          questions: [
+            {
+              topic: "मुख्य खाद्यान्न – चावल",
+              question:
+                "भारत में चावल (धान) की खेती के लिए आदर्श तापमान और वर्षा की परिस्थितियाँ क्या हैं?",
+              options: [
+                "25°C से अधिक तापमान, अधिक आर्द्रता और 100 सेमी से अधिक वार्षिक वर्षा",
+                "10°C–15°C तापमान और 40 सेमी से कम वर्षा",
+                "21°C–27°C तापमान और 50–75 सेमी वर्षा",
+                "ठंडी जलवायु और 210 पाला-रहित दिन",
+              ],
+              answer: 0,
+              explanation:
+                "चावल एक खरीफ फसल है जिसके लिए उच्च तापमान (25°C से ऊपर), अधिक आर्द्रता और 100 सेमी से अधिक वर्षा की आवश्यकता होती है। भारत चीन के बाद दूसरा सबसे बड़ा उत्पादक है।",
+            },
+            {
+              topic: "मुख्य खाद्यान्न – गेहूँ",
+              question:
+                "भारत में गेहूँ उगाने वाले दो मुख्य क्षेत्र कौन-से हैं?",
+              options: [
+                "तटीय ओडिशा और कोंकण तट",
+                "उत्तर-पश्चिम में गंगा-सतलुज का मैदान और दक्कन का काली मिट्टी वाला प्रदेश",
+                "ब्रह्मपुत्र घाटी और सुंदरबन डेल्टा",
+                "थार मरुस्थल और गारो पहाड़ियाँ",
+              ],
+              answer: 1,
+              explanation:
+                "गेहूँ के लिए शीत ऋतु और पकते समय खिली धूप तथा 50–75 सेमी समान वर्षा चाहिए। इसके दो मुख्य क्षेत्र गंगा-सतलुज का मैदान और दक्कन का काली मिट्टी वाला प्रदेश हैं।",
+            },
+            {
+              topic: "मोटे अनाज (Millets)",
+              question:
+                "किस मोटे अनाज में लोहा, कैल्शियम, अन्य सूक्ष्म पोषक तत्व और भूसी (roughage) प्रचुर मात्रा में मिलती है?",
+              options: ["ज्वार", "बाजरा", "रागी", "जौ"],
+              answer: 2,
+              explanation:
+                "रागी शुष्क प्रदेशों की फसल है जो लाल, काली, बलुआ, दोमट और उथली काली मिट्टी पर उगती है तथा लोहा, कैल्शियम, सूक्ष्म पोषक तत्वों व भूसी से भरपूर होती है।",
+            },
+            {
+              topic: "मक्का",
+              question:
+                "कौन-सी फसल खाद्यान्न व चारा दोनों के रूप में प्रयोग होती है, पुरानी जलोढ़ मिट्टी में अच्छी उगती है और बिहार में रबी ऋतु में भी उगाई जाती है?",
+              options: ["ज्वार", "मक्का", "बाजरा", "चना"],
+              answer: 1,
+              explanation:
+                "मक्का 21°C–27°C तापमान और पुरानी जलोढ़ मिट्टी में अच्छी तरह उगती है। यह अधिकांश राज्यों में खरीफ फसल है, परंतु बिहार में यह रबी ऋतु में भी उगाई जाती है।",
+            },
+            {
+              topic: "दालें",
+              question:
+                "फलीदार फसलें (Leguminous crops) होने के कारण सभी दालें वायु से नाइट्रोजन लेकर भूमि की उर्वरता बनाए रखती हैं, सिवाय:",
+              options: ["मूँग", "उड़द", "अरहर (तुअर)", "मसूर"],
+              answer: 2,
+              explanation:
+                "अरहर (तुअर) को छोड़कर अन्य सभी दालें वायु से नाइट्रोजन लेकर भूमि की उर्वरता को बनाए रखती हैं, इसलिए इन्हें आमतौर पर अन्य फसलों के आवर्तन (फसल चक्र) में बोया जाता है।",
+            },
+            {
+              topic: "तिलहन",
+              question:
+                "कौन-सी तिलहन फसल उत्तरी भारत में खरीफ की फसल और दक्षिणी भारत में रबी की फसल है?",
+              options: ["मूँगफली", "सरसों", "अलसी", "तिल (Sesamum)"],
+              answer: 3,
+              explanation:
+                "तिल उत्तरी भारत में खरीफ की फसल है और दक्षिणी भारत में रबी की। (मूँगफली खरीफ है—गुजरात सबसे बड़ा उत्पादक है; अलसी व सरसों रबी हैं; अरंडी दोनों ऋतुओं में बोई जाती है।)",
+            },
+            {
+              topic: "पेय फसलें – कॉफी",
+              question:
+                "यमन से लाई गई उच्च गुणवत्ता वाली 'अरेबिका' किस्म की कॉफी की खेती भारत में सबसे पहले किन पहाड़ियों पर शुरू की गई थी?",
+              options: [
+                "बाबा बूदन पहाड़ियाँ",
+                "गारो पहाड़ियाँ",
+                "दार्जिलिंग पहाड़ियाँ",
+                "अरावली पहाड़ियाँ",
+              ],
+              answer: 0,
+              explanation:
+                "भारत में कॉफी की खेती की शुरुआत बाबा बूदन पहाड़ियों से हुई थी और आज भी यह मुख्यतः कर्नाटक, केरल और तमिलनाडु में नीलगिरि की पहाड़ियों के आसपास सीमित है।",
+            },
+            {
+              topic: "अखाद्य फसलें – रबड़",
+              question:
+                "उस भूमध्यरेखीय फसल की पहचान कीजिए जिसे नम और आर्द्र जलवायु, 200 सेमी से अधिक वर्षा और 25°C से अधिक तापमान की आवश्यकता होती है:",
+              options: ["कपास", "जूट", "रबड़", "गन्ना"],
+              answer: 2,
+              explanation:
+                "रबड़ भूमध्यरेखीय क्षेत्र की फसल है (विशेष परिस्थितियों में उष्ण व उपोष्ण क्षेत्रों में भी उगाई जाती है)। मुख्य क्षेत्र: केरल, तमिलनाडु, कर्नाटक, अंडमान-निकोबार और मेघालय की गारो पहाड़ियाँ।",
+            },
+            {
+              topic: "रेशेदार फसलें – कपास",
+              question:
+                "दक्कन के पठार की शुष्क काली मिट्टी में उगने वाली कपास की फसल को कितने पाला-रहित दिन और पकने के लिए कितने महीने लगते हैं?",
+              options: [
+                "100 पाला-रहित दिन और 3–4 महीने",
+                "210 पाला-रहित दिन और 6–8 महीने",
+                "300 पाला-रहित दिन और 12 महीने",
+                "120 पाला-रहित दिन और 5 महीने",
+              ],
+              answer: 1,
+              explanation:
+                "कपास एक खरीफ फसल है जिसे उच्च तापमान, हल्की वर्षा या सिंचाई, 210 पाला-रहित दिन, खिली धूप और पककर तैयार होने में 6 से 8 महीने लगते हैं।",
+            },
+            {
+              topic: "रेशेदार फसलें – जूट",
+              question:
+                "'सुनहरा रेशा' (Golden Fibre) कहलाने वाला जूट हाल के वर्षों में अपना बाज़ार क्यों खो रहा है?",
+              options: [
+                "क्योंकि पश्चिम बंगाल ने जूट का उत्पादन बंद कर दिया है",
+                "क्योंकि इससे रस्सियाँ या बोरियाँ नहीं बन सकतीं",
+                "अपनी उच्च लागत के कारण, जिससे यह नायलॉन जैसे कृत्रिम रेशों व पैकिंग सामग्री से प्रतिस्पर्धा में पिछड़ रहा है",
+                "क्योंकि बाढ़ के मैदानों की मिट्टी अब उपजाऊ नहीं रही",
+              ],
+              answer: 2,
+              explanation:
+                "उच्च लागत के कारण जूट की माँग कम हो रही है और कृत्रिम रेशों व पैकिंग सामग्री, विशेषकर नायलॉन, की कीमत कम होने के कारण जूट बाज़ार में पिछड़ रहा है।",
+            },
+          ],
+        },
+        {
+          id: "quiz4",
+          number: "क्विज़ 4 / 4",
+          title: "कृषि सुधार, भूदान व बोर्ड मिक्स",
+          description:
+            "प्रौद्योगिकीय एवं संस्थागत सुधार (प्रथम पंचवर्षीय योजना, हरित/श्वेत क्रांति, KCC, PAIS, MSP), भूदान–ग्रामदान आंदोलन व कथन-कारण प्रश्न।",
+          questions: [
+            {
+              topic: "स्वतंत्रता के बाद सुधार",
+              question:
+                "भारत की प्रथम पंचवर्षीय योजना में कृषि से संबंधित मुख्य लक्ष्य क्या था?",
+              options: [
+                "किसान क्रेडिट कार्ड (KCC) की शुरुआत",
+                "भूमि सुधार (जोतों की चकबंदी, सहकारिता तथा ज़मींदारी प्रथा का उन्मूलन)",
+                "श्वेत क्रांति (ऑपरेशन फ्लड)",
+                "बागवानी फसलों का निर्यात",
+              ],
+              answer: 1,
+              explanation:
+                "स्वतंत्रता के पश्चात देश में संस्थागत सुधारों के तहत जोतों की चकबंदी, सहकारिता तथा ज़मींदारी आदि समाप्त करने को प्राथमिकता दी गई। प्रथम पंचवर्षीय योजना में भूमि सुधार मुख्य लक्ष्य था।",
+            },
+            {
+              topic: "प्रौद्योगिकीय सुधार (1960–70)",
+              question:
+                "1960 और 1970 के दशकों में भारतीय कृषि में सुधार के लिए कौन-सी दो प्रमुख क्रांतियाँ शुरू की गईं?",
+              options: [
+                "नीली क्रांति और पीली क्रांति",
+                "हरित क्रांति (पैकेज टेक्नोलॉजी) और श्वेत क्रांति (ऑपरेशन फ्लड)",
+                "स्वर्ण क्रांति और रजत क्रांति",
+                "औद्योगिक क्रांति और डिजिटल क्रांति",
+              ],
+              answer: 1,
+              explanation:
+                "1960 और 1970 के दशकों में पैकेज टेक्नोलॉजी पर आधारित हरित क्रांति और दुग्ध उत्पादन हेतु श्वेत क्रांति (ऑपरेशन फ्लड) जैसी रणनीतियाँ प्रारंभ की गईं।",
+            },
+            {
+              topic: "1980–90 का व्यापक भूमि विकास कार्यक्रम",
+              question:
+                "भारत सरकार ने किसानों के लाभ के लिए विशेष रूप से कौन-सी दो योजनाएँ शुरू की हैं?",
+              options: [
+                "किसान क्रेडिट कार्ड (KCC) और व्यक्तिगत दुर्घटना बीमा योजना (PAIS)",
+                "ज़मींदारी अधिनियम और भूमि विखंडन योजना",
+                "सेरीकल्चर सब्सिडी और नायलॉन संवर्धन अधिनियम",
+                "केवल अंतर्राष्ट्रीय निर्यात शुल्क",
+              ],
+              answer: 0,
+              explanation:
+                "व्यापक भूमि विकास कार्यक्रम के तहत फसल बीमा और ग्रामीण बैंकों के साथ-साथ किसान क्रेडिट कार्ड (KCC) और व्यक्तिगत दुर्घटना बीमा योजना (PAIS) शुरू की गईं।",
+            },
+            {
+              topic: "मूल्य संरक्षण (MSP)",
+              question:
+                "सरकार महत्वपूर्ण फसलों के लिए न्यूनतम सहायता मूल्य (MSP), लाभदायक और खरीद मूल्यों की घोषणा क्यों करती है?",
+              options: [
+                "किसानों पर कर बढ़ाने के लिए",
+                "किसानों को बिचौलियों और दलालों के शोषण से बचाने के लिए",
+                "कर्तन दहन कृषि को बढ़ावा देने के लिए",
+                "खाद्यान्न फसलों को रबड़ से बदलने के लिए",
+              ],
+              answer: 1,
+              explanation:
+                "न्यूनतम सहायता मूल्य (MSP), लाभदायक और खरीद मूल्यों की घोषणा किसानों को बिचौलियों और दलालों के शोषण से बचाने के लिए की जाती है।",
+            },
+            {
+              topic: "भूदान–ग्रामदान आंदोलन",
+              question:
+                "महात्मा गांधी ने किसे अपना आध्यात्मिक उत्तराधिकारी घोषित किया था, जिन्होंने भूदान–ग्रामदान आंदोलन शुरू किया?",
+              options: [
+                "जवाहरलाल नेहरू",
+                "विनोबा भावे",
+                "श्री रामचंद्र रेड्डी",
+                "सरदार वल्लभभाई पटेल",
+              ],
+              answer: 1,
+              explanation:
+                "महात्मा गांधी ने विनोबा भावे को अपना आध्यात्मिक उत्तराधिकारी घोषित किया था। उन्होंने गांधीजी के 'ग्राम स्वराज्य' के संदेश को फैलाने के लिए पूरे देश की पदयात्रा की।",
+            },
+            {
+              topic: "भूदान–ग्रामदान आंदोलन",
+              question:
+                "पोचमपल्ली (वर्तमान तेलंगाना) में किसने 80 भूमिहीन ग्रामीणों में बाँटने के लिए 80 एकड़ भूमि दान करने की पेशकश की थी?",
+              options: [
+                "विनोबा भावे",
+                "श्री रामचंद्र रेड्डी",
+                "महात्मा गांधी",
+                "सुभाष चंद्र बोस",
+              ],
+              answer: 1,
+              explanation:
+                "पोचमपल्ली में श्री रामचंद्र रेड्डी उठ खड़े हुए और उन्होंने 80 भूमिहीन ग्रामीणों को 80 एकड़ भूमि बाँटने की पेशकश की—इसे ही 'भूदान' के नाम से जाना गया।",
+            },
+            {
+              topic: "भूदान–ग्रामदान आंदोलन",
+              question:
+                "जब अनेक गाँवों के मालिक कुछ ज़मींदारों ने भूमिहीनों को पूरा का पूरा गाँव बाँटने की पेशकश की, तो उसे क्या कहा गया?",
+              options: ["भूदान", "ग्रामदान", "ज़मींदारी", "चकबंदी"],
+              answer: 1,
+              explanation:
+                "कुछ ज़मींदारों (जो अनेक गाँवों के मालिक थे) द्वारा भूमिहीनों को पूरे गाँव दान में देने की पेशकश को 'ग्रामदान' कहा गया।",
+            },
+            {
+              topic: "भूदान–ग्रामदान आंदोलन",
+              question:
+                "विनोबा भावे द्वारा शुरू किए गए भूदान–ग्रामदान आंदोलन को 'रक्तहीन क्रांति' (Blood-less Revolution) क्यों कहा जाता है?",
+              options: [
+                "क्योंकि इसमें पशुपालन पर प्रतिबंध था",
+                "क्योंकि इसमें बिना किसी हिंसा के स्वैच्छिक दान व सहमति से भूमि का पुनर्वितरण किया गया",
+                "क्योंकि यह शीत ऋतु में शुरू हुआ था",
+                "क्योंकि इसमें वर्षा के बजाय आधुनिक सिंचाई का प्रयोग हुआ",
+              ],
+              answer: 1,
+              explanation:
+                "चूँकि इस आंदोलन में बिना किसी हिंसा या रक्तपात के स्वैच्छिक रूप से भूमि का पुनर्वितरण किया गया, इसलिए इसे 'रक्तहीन क्रांति' भी कहा जाता है।",
+            },
+            {
+              topic: "बोर्ड परीक्षा – बागवानी फसलें",
+              question:
+                "NCERT के अनुसार फल और उसके प्रसिद्ध उत्पादक क्षेत्र का कौन-सा मिलान गलत है?",
+              options: [
+                "संतरे – नागपुर और चेरापूँजी (मेघालय)",
+                "लीची और अमरूद – उत्तर प्रदेश और बिहार",
+                "अनानास – मेघालय",
+                "सेब और अखरोट – केरल और तमिलनाडु",
+              ],
+              answer: 3,
+              explanation:
+                "सेब, नाशपाती, खुबानी और अखरोट जम्मू-कश्मीर व हिमाचल प्रदेश के प्रसिद्ध शीतोष्ण फल हैं—न कि केरल और तमिलनाडु के।",
+            },
+            {
+              topic: "बोर्ड परीक्षा – कथन और कारण",
+              question:
+                "कथन (A): चाय की खेती एक श्रम-सघन उद्योग है।\nकारण (R): चाय के पौधों को उगाने के लिए वर्ष भर कोष्ण, नम और पाला-रहित जलवायु की आवश्यकता होती है।\n\nसही विकल्प चुनें:",
+              options: [
+                "A और R दोनों सत्य हैं, तथा R, A की सही व्याख्या है।",
+                "A और R दोनों सत्य हैं, लेकिन R, A की सही व्याख्या नहीं है।",
+                "A सत्य है, लेकिन R असत्य है।",
+                "A असत्य है, लेकिन R सत्य है।",
+              ],
+              answer: 1,
+              explanation:
+                "NCERT के अनुसार दोनों कथन सत्य हैं, परंतु जलवायु की आवश्यकता (R) यह स्पष्ट नहीं करती कि चाय की खेती में प्रचुर, सस्ते और कुशल श्रम की आवश्यकता (A) क्यों होती है।",
+            },
+          ],
+        },
+      ];
+
+      const STORAGE_KEY = "corestep_c10_geo_ch4_hindi_progress";
+
+      const hubScreen = document.getElementById("hubScreen");
+      const quizGrid = document.getElementById("quizGrid");
+      const overallStatus = document.getElementById("overallStatus");
+      const overallScore = document.getElementById("overallScore");
+      const overallFill = document.getElementById("overallFill");
+
+      const quizScreen = document.getElementById("quizScreen");
+      const resultScreen = document.getElementById("resultScreen");
+
+      const activeQuizTitle = document.getElementById("activeQuizTitle");
+      const qCounter = document.getElementById("qCounter");
+      const scoreBadge = document.getElementById("scoreBadge");
+      const timerBadge = document.getElementById("timerBadge");
+      const progressFill = document.getElementById("progressFill");
+      const topicTag = document.getElementById("topicTag");
+      const questionText = document.getElementById("questionText");
+      const optionsList = document.getElementById("optionsList");
+      const explanationBox = document.getElementById("explanationBox");
+      const explanationText = document.getElementById("explanationText");
+      const nextBtn = document.getElementById("nextBtn");
+
+      const resultQuizBadge = document.getElementById("resultQuizBadge");
+      const finalScore = document.getElementById("finalScore");
+      const finalPercent = document.getElementById("finalPercent");
+      const resultHeading = document.getElementById("resultHeading");
+      const resultSummary = document.getElementById("resultSummary");
+      const reviewContainer = document.getElementById("reviewContainer");
+      const nextQuizBtn = document.getElementById("nextQuizBtn");
+
+      const themeToggle = document.getElementById("themeToggle");
+
+      let activeQuizIdx = 0;
+      let currentIndex = 0;
+      let score = 0;
+      let userAnswers = [];
+      let secondsElapsed = 0;
+      let timerInterval = null;
+
+      // Theme
+      const savedTheme = localStorage.getItem("corestep_theme") || "light";
+      applyTheme(savedTheme);
+      themeToggle.addEventListener("click", () => {
+        const next =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
+        applyTheme(next);
+        localStorage.setItem("corestep_theme", next);
+      });
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        themeToggle.textContent = theme === "dark" ? "☀️ लाइट" : "🌙 डार्क";
+      }
+
+      // Progress Storage
+      function loadProgress() {
+        try {
+          return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        } catch {
+          return {};
+        }
+      }
+
+      function saveBestScore(quizId, newScore) {
+        const data = loadProgress();
+        const prev = data[quizId] ?? -1;
+        if (newScore > prev) {
+          data[quizId] = newScore;
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+      }
+
+      // Render 4-Quiz Hub
+      function renderHub() {
+        clearInterval(timerInterval);
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.add("hidden");
+        hubScreen.classList.remove("hidden");
+
+        const progress = loadProgress();
+        let completedCount = 0;
+        let totalBest = 0;
+        const totalPossible = quizzes.reduce(
+          (acc, q) => acc + q.questions.length,
+          0,
+        );
+
+        quizGrid.innerHTML = "";
+
+        quizzes.forEach((quiz, idx) => {
+          const best = progress[quiz.id];
+          const isDone = typeof best === "number";
+          if (isDone) {
+            completedCount++;
+            totalBest += best;
+          }
+
+          const card = document.createElement("article");
+          card.className = "quiz-card";
+          card.innerHTML = `
+          <div>
+            <div class="quiz-card-top">
+              <span class="quiz-num">${quiz.number}</span>
+              <span class="status-badge ${isDone ? "done" : ""}">
+                ${isDone ? `सर्वश्रेष्ठ: ${best}/${quiz.questions.length}` : "प्रारंभ नहीं"}
+              </span>
+            </div>
+            <h2>${quiz.title}</h2>
+            <p>${quiz.description}</p>
+          </div>
+          <div>
+            <div class="quiz-card-meta">
+              <span>📝 ${quiz.questions.length} NCERT MCQs</span>
+              <span>⚡ तुरंत व्याख्या</span>
+            </div>
+            <button class="btn-primary btn-full" type="button" data-idx="${idx}">
+              ${isDone ? "फिर से अभ्यास करें →" : "क्विज़ शुरू करें →"}
+            </button>
+          </div>
+        `;
+          card
+            .querySelector("button")
+            .addEventListener("click", () => startQuiz(idx));
+          quizGrid.appendChild(card);
+        });
+
+        overallStatus.textContent = `पूर्ण: ${completedCount} / ${quizzes.length} क्विज़`;
+        overallScore.textContent = `कुल सर्वश्रेष्ठ स्कोर: ${totalBest} / ${totalPossible}`;
+        overallFill.style.width = `${(completedCount / quizzes.length) * 100}%`;
+      }
+
+      // Timer
+      function formatTime(totalSeconds) {
+        const mins = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+        const secs = String(totalSeconds % 60).padStart(2, "0");
+        return `${mins}:${secs}`;
+      }
+
+      function startTimer() {
+        clearInterval(timerInterval);
+        secondsElapsed = 0;
+        timerBadge.textContent = "⏱ 00:00";
+        timerInterval = setInterval(() => {
+          secondsElapsed++;
+          timerBadge.textContent = `⏱ ${formatTime(secondsElapsed)}`;
+        }, 1000);
+      }
+
+      // Start Specific Quiz
+      function startQuiz(idx) {
+        activeQuizIdx = idx;
+        currentIndex = 0;
+        score = 0;
+        userAnswers = [];
+
+        const quiz = quizzes[activeQuizIdx];
+        activeQuizTitle.textContent = `${quiz.number}: ${quiz.title}`;
+
+        hubScreen.classList.add("hidden");
+        resultScreen.classList.add("hidden");
+        quizScreen.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        startTimer();
+        renderQuestion();
+      }
+
+      function renderQuestion() {
+        const quiz = quizzes[activeQuizIdx];
+        const q = quiz.questions[currentIndex];
+        const letters = ["क", "ख", "ग", "घ"];
+
+        qCounter.textContent = `प्रश्न ${currentIndex + 1} / ${quiz.questions.length}`;
+        scoreBadge.textContent = `स्कोर: ${score}`;
+        progressFill.style.width = `${(currentIndex / quiz.questions.length) * 100}%`;
+
+        topicTag.textContent = q.topic;
+        questionText.textContent = q.question;
+        explanationBox.classList.remove("show");
+        explanationText.textContent = "";
+        nextBtn.disabled = true;
+        nextBtn.textContent =
+          currentIndex === quiz.questions.length - 1
+            ? "परिणाम देखें →"
+            : "अगला प्रश्न →";
+
+        optionsList.innerHTML = "";
+        q.options.forEach((optText, optIdx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "option-btn";
+          btn.innerHTML = `<span class="option-key">${letters[optIdx]}</span><span>${optText}</span>`;
+          btn.addEventListener("click", () => selectOption(optIdx));
+          optionsList.appendChild(btn);
+        });
+      }
+
+      function selectOption(selectedIdx) {
+        const quiz = quizzes[activeQuizIdx];
+        const q = quiz.questions[currentIndex];
+        const buttons = optionsList.querySelectorAll(".option-btn");
+
+        buttons.forEach((btn, idx) => {
+          btn.disabled = true;
+          if (idx === q.answer) {
+            btn.classList.add("correct");
+          } else if (idx === selectedIdx) {
+            btn.classList.add("wrong");
+          }
+        });
+
+        const isCorrect = selectedIdx === q.answer;
+        if (isCorrect) {
+          score++;
+          scoreBadge.textContent = `स्कोर: ${score}`;
+        }
+
+        userAnswers.push({
+          question: q.question,
+          selected: q.options[selectedIdx],
+          correct: q.options[q.answer],
+          isCorrect,
+          explanation: q.explanation,
+        });
+
+        explanationText.textContent = q.explanation;
+        explanationBox.classList.add("show");
+        nextBtn.disabled = false;
+        progressFill.style.width = `${((currentIndex + 1) / quiz.questions.length) * 100}%`;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        const quiz = quizzes[activeQuizIdx];
+        currentIndex++;
+        if (currentIndex < quiz.questions.length) {
+          renderQuestion();
+        } else {
+          showResults();
+        }
+      });
+
+      function showResults() {
+        clearInterval(timerInterval);
+        const quiz = quizzes[activeQuizIdx];
+        saveBestScore(quiz.id, score);
+
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        const percent = Math.round((score / quiz.questions.length) * 100);
+        resultQuizBadge.textContent = `${quiz.number} • ${quiz.title}`;
+        finalScore.textContent = `${score}/${quiz.questions.length}`;
+        finalPercent.textContent = `${percent}%`;
+
+        if (percent >= 90) {
+          resultHeading.textContent =
+            "अद्भुत! बोर्ड परीक्षा के लिए पूरी तरह तैयार 🏆";
+        } else if (percent >= 70) {
+          resultHeading.textContent = "बहुत बढ़िया! मज़बूत तैयारी 👍";
+        } else if (percent >= 50) {
+          resultHeading.textContent =
+            "अच्छा प्रयास! कमज़ोर बिंदुओं को दोहराएँ 📖";
+        } else {
+          resultHeading.textContent = "अभ्यास जारी रखें! NCERT नोट्स पढ़ें 💪";
+        }
+
+        resultSummary.textContent = `आपने ${formatTime(secondsElapsed)} समय में ${quiz.questions.length} में से ${score} अंक प्राप्त किए।`;
+
+        if (activeQuizIdx < quizzes.length - 1) {
+          nextQuizBtn.classList.remove("hidden");
+          nextQuizBtn.textContent = `शुरू करें: ${quizzes[activeQuizIdx + 1].number} →`;
+        } else {
+          nextQuizBtn.classList.add("hidden");
+        }
+
+        reviewContainer.innerHTML = "";
+        userAnswers.forEach((item, index) => {
+          const div = document.createElement("div");
+          div.className = `review-item ${item.isCorrect ? "is-correct" : "is-wrong"}`;
+          div.innerHTML = `
+          <div class="review-q">प्र.${index + 1}. ${item.question.replace(/\n/g, "<br>")}</div>
+          <div>आपका उत्तर: <span class="${item.isCorrect ? "text-correct" : "text-wrong"}">${item.selected}</span></div>
+          ${!item.isCorrect ? `<div>सही उत्तर: <span class="text-correct">${item.correct}</span></div>` : ""}
+          <div style="color: var(--muted); margin-top: 6px;"><strong>व्याख्या:</strong> ${item.explanation}</div>
+        `;
+          reviewContainer.appendChild(div);
+        });
+      }
+
+      document
+        .getElementById("backToHubBtn")
+        .addEventListener("click", renderHub);
+      document
+        .getElementById("resultHubBtn")
+        .addEventListener("click", renderHub);
+      document
+        .getElementById("retakeBtn")
+        .addEventListener("click", () => startQuiz(activeQuizIdx));
+      nextQuizBtn.addEventListener("click", () => {
+        if (activeQuizIdx < quizzes.length - 1) startQuiz(activeQuizIdx + 1);
+      });
+
+      document.getElementById("shareBtn").addEventListener("click", () => {
+        const quiz = quizzes[activeQuizIdx];
+        const percent = Math.round((score / quiz.questions.length) * 100);
+        const text = `🌾 मैंने CoreStep Academy पर कक्षा 10 भूगोल अध्याय 4 (कृषि) के ${quiz.number} (${quiz.title}) में ${score}/${quiz.questions.length} (${percent}%) अंक प्राप्त किए! आप भी सभी 4 क्विज़ यहाँ हल करें: https://corestepacademy.github.io/assets/quizzes/class-10-sst-geo-ch4-quiz-hindi.html`;
+        window.open(
+          `https://wa.me/?text=${encodeURIComponent(text)}`,
+          "_blank",
+        );
+      });
+
+      // Initialize Hub
+      renderHub();
+    </script>
+  </body>
+</html>

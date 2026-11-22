@@ -1,0 +1,259 @@
+:root {
+  --bg: #0f1117;
+  --toolbar-bg: #171b24;
+  --border: #2a3142;
+  --text: #e6edf3;
+  --muted: #9aa4b2;
+  --link: #475569;
+
+  --node-0-bg: #3b4b75;
+  --node-0-border: #6382d6;
+  --node-1-bg: #263850;
+  --node-1-border: #4f79a8;
+  --node-2-bg: #1e3a34;
+  --node-2-border: #3a7d6c;
+  --node-leaf-bg: #253326;
+  --node-leaf-border: #557a57;
+
+  --highlight-border: #f59e0b;
+  --highlight-bg: #453211;
+  --btn-bg: #222938;
+  --btn-hover: #2f394e;
+  --accent-bg: #1d4ed8;
+  --accent-hover: #2563eb;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --toolbar-bg: #ffffff;
+  --border: #cbd5e1;
+  --text: #0f172a;
+  --muted: #475569;
+  --link: #94a3b8;
+
+  --node-0-bg: #dbeafe;
+  --node-0-border: #2563eb;
+  --node-1-bg: #e0f2fe;
+  --node-1-border: #0284c7;
+  --node-2-bg: #d1fae5;
+  --node-2-border: #059669;
+  --node-leaf-bg: #ecfccb;
+  --node-leaf-border: #65a30d;
+
+  --highlight-border: #d97706;
+  --highlight-bg: #fef3c7;
+  --btn-bg: #f1f5f9;
+  --btn-hover: #e2e8f0;
+  --accent-bg: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Noto Sans Devanagari",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.toolbar {
+  background: var(--toolbar-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 10;
+}
+
+.title-group h1 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.76rem;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 58px 6px 10px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  width: 235px;
+  outline: none;
+}
+
+#searchInput:focus {
+  border-color: var(--node-0-border);
+}
+
+#searchCount {
+  position: absolute;
+  right: 8px;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+button {
+  background: var(--btn-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: var(--btn-hover);
+}
+
+.lang-btn {
+  background: var(--accent-bg);
+  color: #ffffff;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.lang-btn:hover {
+  background: var(--accent-hover);
+}
+
+#mindmap-container {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#mindmap {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  touch-action: none;
+}
+
+#mindmap:active {
+  cursor: grabbing;
+}
+
+.link {
+  fill: none;
+  stroke: var(--link);
+  stroke-width: 1.6px;
+  stroke-opacity: 0.75;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node-box {
+  rx: 8;
+  ry: 8;
+  stroke-width: 1.5px;
+  transition: filter 0.15s ease;
+}
+
+.node:hover .node-box {
+  filter: brightness(1.15);
+}
+
+.depth-0 .node-box {
+  fill: var(--node-0-bg);
+  stroke: var(--node-0-border);
+}
+.depth-1 .node-box {
+  fill: var(--node-1-bg);
+  stroke: var(--node-1-border);
+}
+.depth-2 .node-box {
+  fill: var(--node-2-bg);
+  stroke: var(--node-2-border);
+}
+.depth-3 .node-box,
+.depth-4 .node-box,
+.depth-5 .node-box {
+  fill: var(--node-leaf-bg);
+  stroke: var(--node-leaf-border);
+}
+
+.node.match .node-box {
+  fill: var(--highlight-bg);
+  stroke: var(--highlight-border);
+  stroke-width: 2.2px;
+}
+
+.node-label {
+  fill: var(--text);
+  font-size: 13.5px;
+  font-weight: 500;
+  user-select: none;
+  dominant-baseline: middle;
+}
+
+.depth-0 .node-label {
+  font-weight: 700;
+  font-size: 14.5px;
+}
+
+.toggle-badge {
+  fill: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  user-select: none;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+@media (max-width: 640px) {
+  .toolbar {
+    padding: 8px 10px;
+  }
+  #searchInput {
+    width: 170px;
+  }
+  .subtitle {
+    display: none;
+  }
+}

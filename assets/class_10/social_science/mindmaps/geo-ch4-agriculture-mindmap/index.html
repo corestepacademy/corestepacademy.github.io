@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agriculture — Interactive Mind Map (Class 10 Geography)</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="title-group">
+        <h1>Agriculture (Class 10 Geography)</h1>
+        <span class="subtitle"
+          >Tap any topic to expand or collapse • Drag to pan • Pinch/scroll to
+          zoom</span
+        >
+      </div>
+
+      <div class="controls">
+        <div class="search-wrap">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search topic (e.g., Rabi, Jowar, Bhoodan)..."
+            autocomplete="off"
+          />
+          <span id="searchCount"></span>
+        </div>
+        <button id="btnExpandAll" title="Expand all branches">
+          Expand All
+        </button>
+        <button id="btnCollapseAll" title="Collapse to main branches">
+          Collapse
+        </button>
+        <button id="btnReset" title="Center and fit to screen">
+          Fit Screen
+        </button>
+        <button id="btnTheme" title="Switch Dark/Light mode">☀️ Light</button>
+      </div>
+    </header>
+
+    <main id="mindmap-container">
+      <svg id="mindmap"></svg>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1545 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Class 10 Geography Ch 4: Agriculture – 4-Quiz Hub | CoreStep Academy
+    </title>
+    <style>
+      :root {
+        --bg: #f4f6fb;
+        --surface: #ffffff;
+        --surface-alt: #f8fafc;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: #e2e8f0;
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --primary-soft: #eff6ff;
+        --correct: #16a34a;
+        --correct-bg: #dcfce7;
+        --wrong: #dc2626;
+        --wrong-bg: #fee2e2;
+        --radius: 16px;
+        --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      }
+
+      [data-theme="dark"] {
+        --bg: #0b1120;
+        --surface: #111827;
+        --surface-alt: #1e293b;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+        --border: #334155;
+        --primary: #3b82f6;
+        --primary-hover: #60a5fa;
+        --primary-soft: rgba(59, 130, 246, 0.16);
+        --correct: #22c55e;
+        --correct-bg: rgba(34, 197, 94, 0.16);
+        --wrong: #ef4444;
+        --wrong-bg: rgba(239, 68, 68, 0.16);
+        --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 20px 16px 56px;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      /* Top Bar */
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+
+      .brand-badge {
+        background: var(--primary);
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.3px;
+      }
+
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn-ghost {
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+        padding: 8px 14px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      /* Hub Hero */
+      .hero-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 26px 28px;
+        box-shadow: var(--shadow);
+        margin-bottom: 22px;
+      }
+
+      .hero-tag {
+        display: inline-block;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 5px 12px;
+        border-radius: 999px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+        line-height: 1.25;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 0.96rem;
+        margin-bottom: 18px;
+      }
+
+      .overall-progress-wrap {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px 16px;
+      }
+
+      .overall-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .progress-track {
+        width: 100%;
+        height: 8px;
+        background: var(--border);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: var(--primary);
+        width: 0%;
+        transition: width 0.35s ease;
+      }
+
+      /* 4-Quiz Bento Grid */
+      .quiz-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .quiz-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+          transform 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .quiz-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary);
+      }
+
+      .quiz-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        gap: 8px;
+      }
+
+      .quiz-num {
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--primary);
+        background: var(--primary-soft);
+        padding: 4px 10px;
+        border-radius: 8px;
+      }
+
+      .status-badge {
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--surface-alt);
+        color: var(--muted);
+        border: 1px solid var(--border);
+      }
+
+      .status-badge.done {
+        background: var(--correct-bg);
+        color: var(--correct);
+        border-color: var(--correct);
+      }
+
+      .quiz-card h2 {
+        font-size: 1.18rem;
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+
+      .quiz-card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+
+      .quiz-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.84rem;
+        color: var(--muted);
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+        margin-bottom: 14px;
+      }
+
+      /* Primary & Secondary Buttons */
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 0.96rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-hover);
+      }
+
+      .btn-primary:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      .btn-full {
+        width: 100%;
+      }
+
+      .btn-whatsapp {
+        background: #16a34a;
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-size: 0.94rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn-whatsapp:hover {
+        background: #15803d;
+      }
+
+      /* Active Quiz Card */
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .active-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      .quiz-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        border-radius: 999px;
+        color: var(--text);
+      }
+
+      .topic-tag {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 18px 0 8px;
+        display: block;
+      }
+
+      .question-text {
+        font-size: 1.18rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        white-space: pre-line;
+      }
+
+      .options-list {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .option-btn {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        text-align: left;
+        padding: 14px 16px;
+        background: var(--surface-alt);
+        color: var(--text);
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        font-size: 0.97rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.18s ease;
+      }
+
+      .option-btn:hover:not(:disabled) {
+        border-color: var(--primary);
+        background: var(--primary-soft);
+      }
+
+      .option-btn:disabled {
+        cursor: default;
+      }
+
+      .option-key {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+
+      .option-btn.correct {
+        border-color: var(--correct);
+        background: var(--correct-bg);
+      }
+
+      .option-btn.correct .option-key {
+        background: var(--correct);
+        color: #fff;
+        border-color: var(--correct);
+      }
+
+      .option-btn.wrong {
+        border-color: var(--wrong);
+        background: var(--wrong-bg);
+      }
+
+      .option-btn.wrong .option-key {
+        background: var(--wrong);
+        color: #fff;
+        border-color: var(--wrong);
+      }
+
+      .explanation {
+        display: none;
+        background: var(--surface-alt);
+        border-left: 4px solid var(--primary);
+        padding: 14px 16px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 0.94rem;
+      }
+
+      .explanation.show {
+        display: block;
+      }
+
+      .explanation strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--primary);
+      }
+
+      .quiz-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* Result Screen */
+      .result-center {
+        text-align: center;
+        margin-bottom: 22px;
+      }
+
+      .score-circle {
+        width: 134px;
+        height: 134px;
+        border-radius: 50%;
+        background: var(--primary-soft);
+        border: 6px solid var(--primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 12px auto 18px;
+      }
+
+      .score-circle .big {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1.1;
+      }
+
+      .score-circle .small {
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .action-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+
+      .review-title {
+        font-size: 1.12rem;
+        margin-bottom: 14px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+
+      .review-item {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+        font-size: 0.92rem;
+      }
+
+      .review-item.is-correct {
+        border-left: 4px solid var(--correct);
+      }
+
+      .review-item.is-wrong {
+        border-left: 4px solid var(--wrong);
+      }
+
+      .review-q {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .text-correct {
+        color: var(--correct);
+        font-weight: 700;
+      }
+      .text-wrong {
+        color: var(--wrong);
+        font-weight: 700;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      @media (max-width: 700px) {
+        .quiz-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-card,
+        .card {
+          padding: 20px 16px;
+        }
+        h1 {
+          font-size: 1.38rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Top Navigation -->
+      <header class="topbar">
+        <a href="../../../../index.html" class="brand">
+          <span class="brand-badge">CoreStep</span>
+          <span>CoreStep Academy</span>
+        </a>
+        <div class="topbar-actions">
+          <a href="../../../../index.html" class="btn-ghost">← Home</a>
+          <button id="themeToggle" class="btn-ghost" type="button">
+            🌙 Dark
+          </button>
+        </div>
+      </header>
+
+      <!-- 4-QUIZ HUB SCREEN -->
+      <main id="hubScreen">
+        <section class="hero-card">
+          <span class="hero-tag">Class 10 • NCERT Geography • Chapter 4</span>
+          <h1>Agriculture – 4-Part Interactive Quiz Hub</h1>
+          <p class="subtitle">
+            Practice all 4 sections of the NCERT chapter step-by-step with 40
+            board-exam MCQs, instant explanations, and automatic progress
+            tracking.
+          </p>
+
+          <div class="overall-progress-wrap">
+            <div class="overall-row">
+              <span id="overallStatus">Completed: 0 / 4 Quizzes</span>
+              <span id="overallScore">Total Best Score: 0 / 40</span>
+            </div>
+            <div class="progress-track">
+              <div id="overallFill" class="progress-fill"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="quizGrid" class="quiz-grid"></section>
+      </main>
+
+      <!-- ACTIVE QUIZ SCREEN -->
+      <section id="quizScreen" class="card hidden">
+        <div class="active-header">
+          <button id="backToHubBtn" class="btn-ghost" type="button">
+            ← All 4 Quizzes
+          </button>
+          <strong id="activeQuizTitle" style="font-size: 0.98rem"
+            >Quiz Title</strong
+          >
+        </div>
+
+        <div class="quiz-meta">
+          <span id="qCounter" class="pill">Question 1 / 10</span>
+          <span id="scoreBadge" class="pill">Score: 0</span>
+          <span id="timerBadge" class="pill">⏱ 00:00</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <span id="topicTag" class="topic-tag">Topic</span>
+        <div id="questionText" class="question-text"></div>
+        <div id="optionsList" class="options-list"></div>
+
+        <div id="explanationBox" class="explanation">
+          <strong>NCERT Explanation</strong>
+          <span id="explanationText"></span>
+        </div>
+
+        <div class="quiz-footer">
+          <span style="font-size: 0.85rem; color: var(--muted)"
+            >Select an option to continue</span
+          >
+          <button id="nextBtn" class="btn-primary" type="button" disabled>
+            Next Question →
+          </button>
+        </div>
+      </section>
+
+      <!-- RESULT SCREEN -->
+      <section id="resultScreen" class="card hidden">
+        <div class="result-center">
+          <span id="resultQuizBadge" class="hero-tag">Quiz Completed</span>
+          <div class="score-circle">
+            <span id="finalScore" class="big">0/10</span>
+            <span id="finalPercent" class="small">0%</span>
+          </div>
+          <h2 id="resultHeading">Great Effort!</h2>
+          <p id="resultSummary" class="subtitle"></p>
+        </div>
+
+        <div class="action-row">
+          <button id="resultHubBtn" class="btn-ghost" type="button">
+            ← All 4 Quizzes
+          </button>
+          <button id="retakeBtn" class="btn-ghost" type="button">
+            ↻ Retake Quiz
+          </button>
+          <button id="nextQuizBtn" class="btn-primary" type="button">
+            Next Quiz →
+          </button>
+          <button id="shareBtn" class="btn-whatsapp" type="button">
+            Share on WhatsApp
+          </button>
+        </div>
+
+        <h3 class="review-title">Detailed Answer Review</h3>
+        <div id="reviewContainer"></div>
+      </section>
+    </div>
+
+    <script>
+      const quizzes = [
+        {
+          id: "quiz1",
+          number: "Quiz 1 of 4",
+          title: "Types of Farming",
+          description:
+            "Primitive Subsistence, Slash & Burn local names (India & World), Intensive Subsistence, Commercial & Plantation Agriculture.",
+          questions: [
+            {
+              topic: "Overview",
+              question:
+                "Roughly what proportion of India's population is engaged in agricultural activities?",
+              options: ["One-fourth", "One-third", "Half", "Two-thirds"],
+              answer: 3,
+              explanation:
+                "India is an agriculturally important country where two-thirds of the population is engaged in agricultural activities.",
+            },
+            {
+              topic: "Primitive Subsistence Farming",
+              question:
+                "Which set of tools is characteristic of Primitive Subsistence Farming?",
+              options: [
+                "Tractors, combine harvesters, and tubewells",
+                "Hoe, dao, and digging sticks",
+                "HYV seed drills and chemical sprayers",
+                "Power tillers and drip irrigation pipes",
+              ],
+              answer: 1,
+              explanation:
+                "Primitive subsistence farming is practised on small patches of land using primitive tools like hoe, dao, and digging sticks with family or community labour.",
+            },
+            {
+              topic: "Slash & Burn – India",
+              question:
+                "What is 'slash and burn' agriculture known as in the North-Eastern states of Assam, Meghalaya, Mizoram, and Nagaland?",
+              options: ["Podu", "Bewar", "Jhumming", "Kumari"],
+              answer: 2,
+              explanation:
+                "In Assam, Meghalaya, Mizoram, and Nagaland, slash and burn agriculture is locally known as Jhumming.",
+            },
+            {
+              topic: "Slash & Burn – India",
+              question:
+                "Match the Indian local name 'Dipa' for slash and burn agriculture with its correct region:",
+              options: [
+                "Bastar district of Chhattisgarh and Andaman & Nicobar Islands",
+                "Western Ghats",
+                "South-eastern Rajasthan",
+                "Himalayan belt",
+              ],
+              answer: 0,
+              explanation:
+                "'Dipa' is used in Bastar district of Chhattisgarh and in the Andaman and Nicobar Islands.",
+            },
+            {
+              topic: "Slash & Burn – India",
+              question:
+                "In which state is slash and burn agriculture locally called 'Bewar' or 'Dahiya'?",
+              options: [
+                "Odisha",
+                "Madhya Pradesh",
+                "Jharkhand",
+                "Andhra Pradesh",
+              ],
+              answer: 1,
+              explanation:
+                "In Madhya Pradesh, slash and burn cultivation is called Bewar or Dahiya. (Podu/Penda is in Andhra Pradesh, Kuruwa in Jharkhand, and Pama Dabi/Koman/Bringa in Odisha.)",
+            },
+            {
+              topic: "Slash & Burn – World",
+              question:
+                "Which of the following pairs correctly matches a global local name of 'slash and burn' farming with its country/region?",
+              options: [
+                "Milpa – Mexico and Central America",
+                "Ladang – Brazil",
+                "Roca – Indonesia",
+                "Conuco – Vietnam",
+              ],
+              answer: 0,
+              explanation:
+                "Milpa is in Mexico & Central America, Conuco in Venezuela, Roca in Brazil, Masole in Central Africa, Ladang in Indonesia, and Ray in Vietnam.",
+            },
+            {
+              topic: "Intensive Subsistence Farming",
+              question:
+                "Why have land-holding sizes become uneconomical in areas of Intensive Subsistence Farming?",
+              options: [
+                "Due to shifting cultivation every two years",
+                "Due to the 'right of inheritance' dividing land among successive generations",
+                "Because plantations occupy all fertile land",
+                "Due to lack of monsoon rainfall",
+              ],
+              answer: 1,
+              explanation:
+                "The 'right of inheritance' leads to division of land among successive generations, making land holdings smaller and uneconomical while farmers keep extracting maximum output from limited land.",
+            },
+            {
+              topic: "Commercial Farming",
+              question:
+                "Which of the following is the main characteristic of Commercial Farming?",
+              options: [
+                "Zero use of chemical fertilisers",
+                "Dependence strictly on natural soil fertility",
+                "Use of higher doses of modern inputs like HYV seeds, chemical fertilisers, insecticides, and pesticides",
+                "Use of only family labour on tiny plots",
+              ],
+              answer: 2,
+              explanation:
+                "Commercial farming relies on higher doses of modern inputs—HYV seeds, chemical fertilisers, insecticides, and pesticides—to achieve higher productivity.",
+            },
+            {
+              topic: "Regional Variation",
+              question:
+                "Rice is a commercial crop in Haryana and Punjab, whereas in Odisha it is mainly a:",
+              options: [
+                "Plantation crop",
+                "Subsistence crop",
+                "Fibre crop",
+                "Zaid crop",
+              ],
+              answer: 1,
+              explanation:
+                "The degree of commercialisation varies by region: rice is a commercial crop in Punjab and Haryana, but a subsistence crop in Odisha.",
+            },
+            {
+              topic: "Plantation Agriculture",
+              question: "Which statement is TRUE about Plantation Agriculture?",
+              options: [
+                "Multiple food grains are grown together on small plots",
+                "A single crop is grown over a large area as an interface of agriculture and industry",
+                "It requires minimal capital and no transport network",
+                "All produce is consumed directly by the farmer's family",
+              ],
+              answer: 1,
+              explanation:
+                "In plantation agriculture, a single crop (like tea, coffee, rubber, sugarcane, or banana) is grown on a large area using capital-intensive inputs and migrant labour, serving as industrial raw material.",
+            },
+          ],
+        },
+        {
+          id: "quiz2",
+          number: "Quiz 2 of 4",
+          title: "Cropping Pattern & Seasons",
+          description:
+            "Rabi, Kharif, and Zaid seasons, sowing & harvesting months, western temperate cyclones, and Aus, Aman & Boro paddy.",
+          questions: [
+            {
+              topic: "Cropping Seasons",
+              question:
+                "How many main cropping seasons does India have according to NCERT?",
+              options: [
+                "Two (Rabi and Kharif)",
+                "Three (Rabi, Kharif, and Zaid)",
+                "Four (Spring, Summer, Autumn, Winter)",
+                "Only one monsoon season",
+              ],
+              answer: 1,
+              explanation:
+                "India has three cropping seasons: Rabi, Kharif, and Zaid.",
+            },
+            {
+              topic: "Rabi Season",
+              question: "When are Rabi crops sown and harvested in India?",
+              options: [
+                "Sown in June–July; harvested in September–October",
+                "Sown in October–December; harvested in April–June",
+                "Sown in March–April; harvested in June",
+                "Sown in August; harvested in December",
+              ],
+              answer: 1,
+              explanation:
+                "Rabi crops are sown in winter from October to December and harvested in summer from April to June.",
+            },
+            {
+              topic: "Rabi Crops",
+              question:
+                "Which of the following groups consists ONLY of Rabi crops?",
+              options: [
+                "Wheat, barley, peas, gram, and mustard",
+                "Paddy, maize, jowar, bajra, and cotton",
+                "Watermelon, muskmelon, and cucumber",
+                "Jute, groundnut, soyabean, and urad",
+              ],
+              answer: 0,
+              explanation:
+                "Wheat, barley, peas, gram, and mustard are important Rabi crops.",
+            },
+            {
+              topic: "Rabi Climate Factor",
+              question:
+                "Availability of precipitation during winter months due to which weather phenomenon helps in the success of Rabi crops?",
+              options: [
+                "South-West Monsoon",
+                "Western temperate cyclones",
+                "Tropical cyclones from the Bay of Bengal",
+                "Loo winds",
+              ],
+              answer: 1,
+              explanation:
+                "Winter precipitation from western temperate cyclones, along with the success of the Green Revolution, aids Rabi crop production in north and north-western India.",
+            },
+            {
+              topic: "Kharif Season",
+              question: "When are Kharif crops sown and harvested?",
+              options: [
+                "Sown in October; harvested in April",
+                "Sown with the onset of monsoon (June–July); harvested in September–October",
+                "Sown in March; harvested in May",
+                "Sown in January; harvested in August",
+              ],
+              answer: 1,
+              explanation:
+                "Kharif crops are grown with the onset of monsoon in different parts of the country and harvested in September–October.",
+            },
+            {
+              topic: "Kharif Crops",
+              question: "Which of the following is NOT a Kharif crop?",
+              options: ["Paddy", "Cotton", "Groundnut", "Mustard"],
+              answer: 3,
+              explanation:
+                "Mustard is a Rabi crop. Paddy, cotton, groundnut, maize, jowar, bajra, tur, moong, urad, jute, and soyabean are Kharif crops.",
+            },
+            {
+              topic: "Paddy Crops",
+              question:
+                "In Assam, West Bengal, and Odisha, three crops of paddy are grown in a single year. What are they called?",
+              options: [
+                "Rabi, Kharif, and Zaid",
+                "Aus, Aman, and Boro",
+                "Jhumming, Dipa, and Pamlou",
+                "Arabica, Robusta, and Liberica",
+              ],
+              answer: 1,
+              explanation:
+                "In states like Assam, West Bengal, and Odisha, three crops of paddy are grown in a year: Aus, Aman, and Boro.",
+            },
+            {
+              topic: "Zaid Season",
+              question:
+                "The short summer cropping season occurring between the Rabi and Kharif seasons is known as:",
+              options: ["Kharif", "Zaid", "Boro", "Monsoon"],
+              answer: 1,
+              explanation:
+                "In between the Rabi and the Kharif seasons, there is a short season during the summer months known as the Zaid season.",
+            },
+            {
+              topic: "Zaid Crops",
+              question:
+                "Which set of crops is produced during the Zaid season?",
+              options: [
+                "Watermelon, muskmelon, cucumber, vegetables, and fodder crops",
+                "Wheat, gram, and barley",
+                "Cotton, jute, and soyabean",
+                "Tea, coffee, and rubber",
+              ],
+              answer: 0,
+              explanation:
+                "Some crops produced during 'Zaid' are watermelon, muskmelon, cucumber, vegetables, and fodder crops.",
+            },
+            {
+              topic: "Crop Duration",
+              question:
+                "Which crop mentioned in the Cropping Pattern section takes almost a full year to grow?",
+              options: ["Maize", "Wheat", "Sugarcane", "Cucumber"],
+              answer: 2,
+              explanation:
+                "NCERT specifically notes under the Zaid season section that sugarcane takes almost a year to grow.",
+            },
+          ],
+        },
+        {
+          id: "quiz3",
+          number: "Quiz 3 of 4",
+          title: "Major Food & Non-Food Crops",
+          description:
+            "Climate, temperature, rainfall, soil, and major producing states for Grains, Millets, Pulses, Sugarcane, Oil Seeds, Tea, Coffee, Rubber, Cotton & Jute.",
+          questions: [
+            {
+              topic: "Food Grains – Rice",
+              question:
+                "What temperature and rainfall conditions are required for Rice cultivation?",
+              options: [
+                "Above 25°C, high humidity, and annual rainfall above 100 cm",
+                "10°C–15°C and rainfall below 40 cm",
+                "21°C–27°C and 50–75 cm rainfall",
+                "Cool climate and 210 frost-free days",
+              ],
+              answer: 0,
+              explanation:
+                "Rice is a Kharif crop requiring high temperature (above 25°C), high humidity, and annual rainfall above 100 cm. India is the 2nd largest producer after China.",
+            },
+            {
+              topic: "Food Grains – Wheat",
+              question:
+                "Which are the two important wheat-growing zones in India?",
+              options: [
+                "Coastal Odisha and Konkan coast",
+                "Ganga-Satluj plains in the north-west and black soil region of the Deccan",
+                "Brahmaputra valley and Sundarbans delta",
+                "Thar desert and Garo hills",
+              ],
+              answer: 1,
+              explanation:
+                "Wheat requires a cool growing season, bright sunshine at ripening, and 50–75 cm rainfall. Its two major zones are the Ganga-Satluj plains (north-west) and the black soil region of the Deccan.",
+            },
+            {
+              topic: "Millets",
+              question:
+                "Which millet is very rich in iron, calcium, other micronutrients, and roughage?",
+              options: ["Jowar", "Bajra", "Ragi", "Barley"],
+              answer: 2,
+              explanation:
+                "Ragi is a crop of dry regions growing on red, black, sandy, loamy, and shallow black soils, and is very rich in iron, calcium, micronutrients, and roughage.",
+            },
+            {
+              topic: "Maize",
+              question:
+                "Which crop is used as both food and fodder, grows well in old alluvial soil, and is grown in the Rabi season in Bihar?",
+              options: ["Jowar", "Maize", "Bajra", "Gram"],
+              answer: 1,
+              explanation:
+                "Maize requires 21°C–27°C and old alluvial soil. It is a Kharif crop in most states, but in Bihar it is also grown in the Rabi season.",
+            },
+            {
+              topic: "Pulses",
+              question:
+                "Being leguminous crops, all pulses help restore soil fertility by fixing nitrogen from the air EXCEPT:",
+              options: ["Moong", "Urad", "Arhar (Tur)", "Masur"],
+              answer: 2,
+              explanation:
+                "All pulses except Arhar (Tur) fix atmospheric nitrogen, which is why they are mostly grown in rotation with other crops.",
+            },
+            {
+              topic: "Oil Seeds",
+              question:
+                "Which oilseed is a Kharif crop in North India and a Rabi crop in South India?",
+              options: ["Groundnut", "Mustard", "Linseed", "Sesamum (Til)"],
+              answer: 3,
+              explanation:
+                "Sesamum (til) is a Kharif crop in the north and a Rabi crop in the south. Groundnut is Kharif (Gujarat is the largest producer), linseed & mustard are Rabi, and castor is grown in both seasons.",
+            },
+            {
+              topic: "Beverage Crops – Coffee",
+              question:
+                "Indian coffee of the 'Arabica' variety was initially brought from Yemen and introduced on which hills?",
+              options: [
+                "Baba Budan Hills",
+                "Garo Hills",
+                "Darjeeling Hills",
+                "Aravalli Hills",
+              ],
+              answer: 0,
+              explanation:
+                "Coffee cultivation was introduced on the Baba Budan Hills and even today is mainly confined to the Nilgiri hills in Karnataka, Kerala, and Tamil Nadu.",
+            },
+            {
+              topic: "Non-Food Crops – Rubber",
+              question:
+                "Which crop is an equatorial crop requiring moist and humid climate with rainfall above 200 cm and temperature above 25°C?",
+              options: ["Cotton", "Jute", "Rubber", "Sugarcane"],
+              answer: 2,
+              explanation:
+                "Rubber is an equatorial crop (also grown in tropical/subtropical areas under special conditions) requiring >200 cm rainfall and >25°C temperature. Major areas: Kerala, Tamil Nadu, Karnataka, A&N Islands, and Garo hills of Meghalaya.",
+            },
+            {
+              topic: "Fibre Crops – Cotton",
+              question:
+                "How many frost-free days and months to mature does Cotton require?",
+              options: [
+                "100 frost-free days and 3–4 months",
+                "210 frost-free days and 6–8 months",
+                "300 frost-free days and 12 months",
+                "120 frost-free days and 5 months",
+              ],
+              answer: 1,
+              explanation:
+                "Cotton is a Kharif crop growing well in drier parts of black cotton soil, requiring high temperature, light rainfall/irrigation, 210 frost-free days, bright sunshine, and 6 to 8 months to mature.",
+            },
+            {
+              topic: "Fibre Crops – Jute",
+              question:
+                "Why is Jute (the 'golden fibre') losing its market in recent years?",
+              options: [
+                "Because West Bengal stopped producing jute",
+                "Because it cannot be used for ropes or mats",
+                "Due to its high cost compared to synthetic fibres and packing materials like nylon",
+                "Because flood-plain soils are no longer fertile",
+              ],
+              answer: 2,
+              explanation:
+                "Due to its high cost, jute is losing market to synthetic fibres and packing materials, particularly nylon.",
+            },
+          ],
+        },
+        {
+          id: "quiz4",
+          number: "Quiz 4 of 4",
+          title: "Reforms, Bhoodan & Board Mix",
+          description:
+            "Institutional & Technological Reforms (1st Five-Year Plan, Green/White Revolution, KCC, PAIS, MSP), Bhoodan–Gramdan & Assertion-Reason.",
+          questions: [
+            {
+              topic: "Post-Independence Reforms",
+              question:
+                "What was the main focus of India's First Five-Year Plan regarding agriculture?",
+              options: [
+                "Introduction of Kissan Credit Card",
+                "Land reform (collectivisation, consolidation of holdings, cooperation, and abolition of Zamindari)",
+                "White Revolution (Operation Flood)",
+                "Export of horticulture crops",
+              ],
+              answer: 1,
+              explanation:
+                "Land reform—including collectivisation, consolidation of holdings, cooperation, and abolition of Zamindari—was the main focus of the First Five-Year Plan.",
+            },
+            {
+              topic: "Technological Reforms (1960s–70s)",
+              question:
+                "Which two major revolutions were introduced in the 1960s and 1970s to improve Indian agriculture?",
+              options: [
+                "Blue Revolution and Yellow Revolution",
+                "Green Revolution (package technology) and White Revolution (Operation Flood)",
+                "Golden Revolution and Silver Revolution",
+                "Industrial Revolution and Digital Revolution",
+              ],
+              answer: 1,
+              explanation:
+                "The Green Revolution (based on package technology) and the White Revolution (Operation Flood for milk production) were launched in the 1960s and 1970s.",
+            },
+            {
+              topic: "1980s–90s Land Development",
+              question:
+                "Which of the following schemes were introduced by the Government of India specifically for the benefit of farmers?",
+              options: [
+                "Kissan Credit Card (KCC) and Personal Accident Insurance Scheme (PAIS)",
+                "Zamindari Act and Land Fragmentation Scheme",
+                "Sericulture Subsidy and Nylon Promotion Act",
+                "Only international export tariffs",
+              ],
+              answer: 0,
+              explanation:
+                "Under the comprehensive land development programme, Kissan Credit Card (KCC) and Personal Accident Insurance Scheme (PAIS) were introduced alongside crop insurance and Grameen banks.",
+            },
+            {
+              topic: "Price Protection",
+              question:
+                "Why does the government announce Minimum Support Price (MSP), remunerative, and procurement prices for important crops?",
+              options: [
+                "To increase taxes on farmers",
+                "To check the exploitation of farmers by speculators and middlemen",
+                "To encourage slash and burn cultivation",
+                "To replace food crops with rubber",
+              ],
+              answer: 1,
+              explanation:
+                "MSP, remunerative, and procurement prices protect farmers from exploitation by speculators and middlemen.",
+            },
+            {
+              topic: "Bhoodan–Gramdan",
+              question:
+                "Who was declared by Mahatma Gandhi as his spiritual heir and initiated the Bhoodan–Gramdan movement?",
+              options: [
+                "Jawaharlal Nehru",
+                "Vinoba Bhave",
+                "Shri Ram Chandra Reddy",
+                "Sardar Vallabhbhai Patel",
+              ],
+              answer: 1,
+              explanation:
+                "Vinoba Bhave, Mahatma Gandhi's spiritual heir, undertook a padyatra across India to spread Gandhiji's message of Gram Swarajya and initiated the Bhoodan–Gramdan movement.",
+            },
+            {
+              topic: "Bhoodan–Gramdan",
+              question:
+                "At Pochampally (in present-day Telangana), who offered 80 acres of land to be distributed among 80 landless villagers?",
+              options: [
+                "Vinoba Bhave",
+                "Shri Ram Chandra Reddy",
+                "Mahatma Gandhi",
+                "Subhas Chandra Bose",
+              ],
+              answer: 1,
+              explanation:
+                "At Pochampally, Shri Ram Chandra Reddy stood up and offered 80 acres of land for 80 landless villagers—an act known as Bhoodan.",
+            },
+            {
+              topic: "Bhoodan–Gramdan",
+              question:
+                "What was the donation of entire villages by zamindars for distribution among the landless called?",
+              options: ["Bhoodan", "Gramdan", "Zamindari", "Consolidation"],
+              answer: 1,
+              explanation:
+                "When zamindars (owners of many villages) offered to distribute entire villages among the landless, it was known as Gramdan.",
+            },
+            {
+              topic: "Bhoodan–Gramdan",
+              question:
+                "Why is the Bhoodan–Gramdan movement also known as the 'Blood-less Revolution'?",
+              options: [
+                "Because it banned animal husbandry",
+                "Because it aimed at voluntary land redistribution through persuasion rather than violence",
+                "Because it was launched during winter",
+                "Because it used modern irrigation instead of rainfall",
+              ],
+              answer: 1,
+              explanation:
+                "Because land was redistributed through voluntary donation and persuasion without any violence, it is called the Blood-less Revolution.",
+            },
+            {
+              topic: "Board Exam – Horticulture",
+              question:
+                "Which pair of fruit and famous producing region is INCORRECT according to NCERT?",
+              options: [
+                "Oranges – Nagpur and Cherrapunjee (Meghalaya)",
+                "Lichi and Guava – Uttar Pradesh and Bihar",
+                "Pineapples – Meghalaya",
+                "Apples and Walnuts – Kerala and Tamil Nadu",
+              ],
+              answer: 3,
+              explanation:
+                "Apples, pears, apricots, and walnuts are famous temperate fruits of Jammu & Kashmir and Himachal Pradesh—not Kerala and Tamil Nadu.",
+            },
+            {
+              topic: "Board Exam – Assertion & Reason",
+              question:
+                "Assertion (A): Tea cultivation is a labour-intensive industry.\nReason (R): Tea bushes require a warm and moist frost-free climate all through the year.\n\nChoose the correct option:",
+              options: [
+                "Both A and R are true, and R is the correct explanation of A.",
+                "Both A and R are true, but R is NOT the correct explanation of A.",
+                "A is true, but R is false.",
+                "A is false, but R is true.",
+              ],
+              answer: 1,
+              explanation:
+                "Both statements are true per NCERT, but the climatic condition (R) does not explain why tea cultivation requires abundant, cheap, and skilled labour (A).",
+            },
+          ],
+        },
+      ];
+
+      const STORAGE_KEY = "corestep_c10_geo_ch4_progress";
+
+      const hubScreen = document.getElementById("hubScreen");
+      const quizGrid = document.getElementById("quizGrid");
+      const overallStatus = document.getElementById("overallStatus");
+      const overallScore = document.getElementById("overallScore");
+      const overallFill = document.getElementById("overallFill");
+
+      const quizScreen = document.getElementById("quizScreen");
+      const resultScreen = document.getElementById("resultScreen");
+
+      const activeQuizTitle = document.getElementById("activeQuizTitle");
+      const qCounter = document.getElementById("qCounter");
+      const scoreBadge = document.getElementById("scoreBadge");
+      const timerBadge = document.getElementById("timerBadge");
+      const progressFill = document.getElementById("progressFill");
+      const topicTag = document.getElementById("topicTag");
+      const questionText = document.getElementById("questionText");
+      const optionsList = document.getElementById("optionsList");
+      const explanationBox = document.getElementById("explanationBox");
+      const explanationText = document.getElementById("explanationText");
+      const nextBtn = document.getElementById("nextBtn");
+
+      const resultQuizBadge = document.getElementById("resultQuizBadge");
+      const finalScore = document.getElementById("finalScore");
+      const finalPercent = document.getElementById("finalPercent");
+      const resultHeading = document.getElementById("resultHeading");
+      const resultSummary = document.getElementById("resultSummary");
+      const reviewContainer = document.getElementById("reviewContainer");
+      const nextQuizBtn = document.getElementById("nextQuizBtn");
+
+      const themeToggle = document.getElementById("themeToggle");
+
+      let activeQuizIdx = 0;
+      let currentIndex = 0;
+      let score = 0;
+      let userAnswers = [];
+      let secondsElapsed = 0;
+      let timerInterval = null;
+
+      // Theme
+      const savedTheme = localStorage.getItem("corestep_theme") || "light";
+      applyTheme(savedTheme);
+      themeToggle.addEventListener("click", () => {
+        const next =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
+        applyTheme(next);
+        localStorage.setItem("corestep_theme", next);
+      });
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        themeToggle.textContent = theme === "dark" ? "☀️ Light" : "🌙 Dark";
+      }
+
+      // Progress Storage
+      function loadProgress() {
+        try {
+          return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+        } catch {
+          return {};
+        }
+      }
+
+      function saveBestScore(quizId, newScore) {
+        const data = loadProgress();
+        const prev = data[quizId] ?? -1;
+        if (newScore > prev) {
+          data[quizId] = newScore;
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+      }
+
+      // Render 4-Quiz Hub
+      function renderHub() {
+        clearInterval(timerInterval);
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.add("hidden");
+        hubScreen.classList.remove("hidden");
+
+        const progress = loadProgress();
+        let completedCount = 0;
+        let totalBest = 0;
+        const totalPossible = quizzes.reduce(
+          (acc, q) => acc + q.questions.length,
+          0,
+        );
+
+        quizGrid.innerHTML = "";
+
+        quizzes.forEach((quiz, idx) => {
+          const best = progress[quiz.id];
+          const isDone = typeof best === "number";
+          if (isDone) {
+            completedCount++;
+            totalBest += best;
+          }
+
+          const card = document.createElement("article");
+          card.className = "quiz-card";
+          card.innerHTML = `
+          <div>
+            <div class="quiz-card-top">
+              <span class="quiz-num">${quiz.number}</span>
+              <span class="status-badge ${isDone ? "done" : ""}">
+                ${isDone ? `Best: ${best}/${quiz.questions.length}` : "Not Started"}
+              </span>
+            </div>
+            <h2>${quiz.title}</h2>
+            <p>${quiz.description}</p>
+          </div>
+          <div>
+            <div class="quiz-card-meta">
+              <span>📝 ${quiz.questions.length} NCERT MCQs</span>
+              <span>⚡ Instant Review</span>
+            </div>
+            <button class="btn-primary btn-full" type="button" data-idx="${idx}">
+              ${isDone ? "Retake Quiz →" : "Start Quiz →"}
+            </button>
+          </div>
+        `;
+          card
+            .querySelector("button")
+            .addEventListener("click", () => startQuiz(idx));
+          quizGrid.appendChild(card);
+        });
+
+        overallStatus.textContent = `Completed: ${completedCount} / ${quizzes.length} Quizzes`;
+        overallScore.textContent = `Total Best Score: ${totalBest} / ${totalPossible}`;
+        overallFill.style.width = `${(completedCount / quizzes.length) * 100}%`;
+      }
+
+      // Timer
+      function formatTime(totalSeconds) {
+        const mins = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+        const secs = String(totalSeconds % 60).padStart(2, "0");
+        return `${mins}:${secs}`;
+      }
+
+      function startTimer() {
+        clearInterval(timerInterval);
+        secondsElapsed = 0;
+        timerBadge.textContent = "⏱ 00:00";
+        timerInterval = setInterval(() => {
+          secondsElapsed++;
+          timerBadge.textContent = `⏱ ${formatTime(secondsElapsed)}`;
+        }, 1000);
+      }
+
+      // Start Specific Quiz
+      function startQuiz(idx) {
+        activeQuizIdx = idx;
+        currentIndex = 0;
+        score = 0;
+        userAnswers = [];
+
+        const quiz = quizzes[activeQuizIdx];
+        activeQuizTitle.textContent = `${quiz.number}: ${quiz.title}`;
+
+        hubScreen.classList.add("hidden");
+        resultScreen.classList.add("hidden");
+        quizScreen.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        startTimer();
+        renderQuestion();
+      }
+
+      function renderQuestion() {
+        const quiz = quizzes[activeQuizIdx];
+        const q = quiz.questions[currentIndex];
+        const letters = ["A", "B", "C", "D"];
+
+        qCounter.textContent = `Question ${currentIndex + 1} / ${quiz.questions.length}`;
+        scoreBadge.textContent = `Score: ${score}`;
+        progressFill.style.width = `${(currentIndex / quiz.questions.length) * 100}%`;
+
+        topicTag.textContent = q.topic;
+        questionText.textContent = q.question;
+        explanationBox.classList.remove("show");
+        explanationText.textContent = "";
+        nextBtn.disabled = true;
+        nextBtn.textContent =
+          currentIndex === quiz.questions.length - 1
+            ? "View Results →"
+            : "Next Question →";
+
+        optionsList.innerHTML = "";
+        q.options.forEach((optText, optIdx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "option-btn";
+          btn.innerHTML = `<span class="option-key">${letters[optIdx]}</span><span>${optText}</span>`;
+          btn.addEventListener("click", () => selectOption(optIdx));
+          optionsList.appendChild(btn);
+        });
+      }
+
+      function selectOption(selectedIdx) {
+        const quiz = quizzes[activeQuizIdx];
+        const q = quiz.questions[currentIndex];
+        const buttons = optionsList.querySelectorAll(".option-btn");
+
+        buttons.forEach((btn, idx) => {
+          btn.disabled = true;
+          if (idx === q.answer) {
+            btn.classList.add("correct");
+          } else if (idx === selectedIdx) {
+            btn.classList.add("wrong");
+          }
+        });
+
+        const isCorrect = selectedIdx === q.answer;
+        if (isCorrect) {
+          score++;
+          scoreBadge.textContent = `Score: ${score}`;
+        }
+
+        userAnswers.push({
+          question: q.question,
+          selected: q.options[selectedIdx],
+          correct: q.options[q.answer],
+          isCorrect,
+          explanation: q.explanation,
+        });
+
+        explanationText.textContent = q.explanation;
+        explanationBox.classList.add("show");
+        nextBtn.disabled = false;
+        progressFill.style.width = `${((currentIndex + 1) / quiz.questions.length) * 100}%`;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        const quiz = quizzes[activeQuizIdx];
+        currentIndex++;
+        if (currentIndex < quiz.questions.length) {
+          renderQuestion();
+        } else {
+          showResults();
+        }
+      });
+
+      function showResults() {
+        clearInterval(timerInterval);
+        const quiz = quizzes[activeQuizIdx];
+        saveBestScore(quiz.id, score);
+
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        const percent = Math.round((score / quiz.questions.length) * 100);
+        resultQuizBadge.textContent = `${quiz.number} • ${quiz.title}`;
+        finalScore.textContent = `${score}/${quiz.questions.length}`;
+        finalPercent.textContent = `${percent}%`;
+
+        if (percent >= 90) {
+          resultHeading.textContent = "Outstanding! Board Exam Ready 🏆";
+        } else if (percent >= 70) {
+          resultHeading.textContent = "Great Job! Solid Preparation 👍";
+        } else if (percent >= 50) {
+          resultHeading.textContent = "Good Effort! Revise Weak Areas 📖";
+        } else {
+          resultHeading.textContent = "Keep Practising! Review NCERT Notes 💪";
+        }
+
+        resultSummary.textContent = `You scored ${score} out of ${quiz.questions.length} in ${formatTime(secondsElapsed)}.`;
+
+        if (activeQuizIdx < quizzes.length - 1) {
+          nextQuizBtn.classList.remove("hidden");
+          nextQuizBtn.textContent = `Start ${quizzes[activeQuizIdx + 1].number} →`;
+        } else {
+          nextQuizBtn.classList.add("hidden");
+        }
+
+        reviewContainer.innerHTML = "";
+        userAnswers.forEach((item, index) => {
+          const div = document.createElement("div");
+          div.className = `review-item ${item.isCorrect ? "is-correct" : "is-wrong"}`;
+          div.innerHTML = `
+          <div class="review-q">Q${index + 1}. ${item.question.replace(/\n/g, "<br>")}</div>
+          <div>Your Answer: <span class="${item.isCorrect ? "text-correct" : "text-wrong"}">${item.selected}</span></div>
+          ${!item.isCorrect ? `<div>Correct Answer: <span class="text-correct">${item.correct}</span></div>` : ""}
+          <div style="color: var(--muted); margin-top: 6px;"><strong>Explanation:</strong> ${item.explanation}</div>
+        `;
+          reviewContainer.appendChild(div);
+        });
+      }
+
+      document
+        .getElementById("backToHubBtn")
+        .addEventListener("click", renderHub);
+      document
+        .getElementById("resultHubBtn")
+        .addEventListener("click", renderHub);
+      document
+        .getElementById("retakeBtn")
+        .addEventListener("click", () => startQuiz(activeQuizIdx));
+      nextQuizBtn.addEventListener("click", () => {
+        if (activeQuizIdx < quizzes.length - 1) startQuiz(activeQuizIdx + 1);
+      });
+
+      document.getElementById("shareBtn").addEventListener("click", () => {
+        const quiz = quizzes[activeQuizIdx];
+        const percent = Math.round((score / quiz.questions.length) * 100);
+        const text = `🌾 I scored ${score}/${quiz.questions.length} (${percent}%) in ${quiz.number} (${quiz.title}) – Class 10 Geography Ch 4 Agriculture on CoreStep Academy! Try all 4 quizzes here: https://corestepacademy.github.io/assets/quizzes/class-10-sst-geo-ch4-quiz.html`;
+        window.open(
+          `https://wa.me/?text=${encodeURIComponent(text)}`,
+          "_blank",
+        );
+      });
+
+      // Initialize Hub
+      renderHub();
+    </script>
+  </body>
+</html>

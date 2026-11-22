@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agriculture / कृषि — Interactive Mind Map (Class 10)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="title-group">
+        <h1 id="pageTitle">कृषि (कक्षा 10 भूगोल)</h1>
+        <span class="subtitle" id="pageSubtitle"
+          >खोलने/बंद करने के लिए टैप करें • खींचकर घुमाएँ • ज़ूम करें</span
+        >
+      </div>
+
+      <div class="controls">
+        <div class="search-wrap">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="खोजें (जैसे: रबी, ज्वार, भूदान)..."
+            autocomplete="off"
+          />
+          <span id="searchCount"></span>
+        </div>
+        <button id="btnLang" class="lang-btn" title="Switch Language">
+          English
+        </button>
+        <button id="btnExpandAll">सभी खोलें</button>
+        <button id="btnCollapseAll">समेटें</button>
+        <button id="btnReset">स्क्रीन फिट</button>
+        <button id="btnTheme">☀️ लाइट</button>
+      </div>
+    </header>
+
+    <main id="mindmap-container">
+      <svg id="mindmap"></svg>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
